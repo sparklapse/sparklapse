@@ -1,0 +1,25 @@
+---
+import Logo from "../components/Logo.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <main class="grid place-content-center h-screen">
+    <div>
+      <Logo />
+      <h1 class="text-4xl font-bold">Sparklapse</h1>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  body {
+    background: rgb(255, 235, 144);
+    background: linear-gradient(
+      170deg,
+      rgba(255, 235, 144, 1) 0%,
+      rgba(255, 224, 242, 1) 50%,
+      rgba(191, 238, 254, 1) 100%
+    );
+  }
+</style>
