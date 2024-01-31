@@ -10,6 +10,8 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind()],
   output: "hybrid",
   adapter: vercel({
-    webAnalytics: true,
+    webAnalytics: {
+      enabled: true,
+    },
   }),
 });
