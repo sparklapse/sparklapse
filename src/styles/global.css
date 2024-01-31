@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Gabarito Variable", sans-serif;
+  color: #2a2a2a;
+  min-height: 100vh;
+
+  background: rgb(255, 235, 144);
+  background: linear-gradient(
+    170deg,
+    rgba(255, 235, 144, 1) 0%,
+    rgba(255, 224, 242, 1) 50%,
+    rgba(191, 238, 254, 1) 100%
+  );
+}
