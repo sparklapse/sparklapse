@@ -3,51 +3,132 @@ import "@fontsource-variable/nunito";
 
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Logo from "./_logo-3.png";
+import Modes from "./_modes.png";
+import { ArrowDown } from "lucide-svelte";
+
+const times = [
+  {
+    label: "Warm Up",
+    time: "5:30 - 6:00",
+    features: "abc",
+  },
+  {
+    label: "Main Event",
+    time: "5:30 - 6:00",
+    features: "abc",
+  },
+  {
+    label: "After Party",
+    time: "5:30 - 6:00",
+    features: "abc",
+  },
+];
 ---
 
 <BaseLayout title="Super Streamer Lobby 3">
-  <div class="grid justify-center">
-    <main class="max-w-5xl flex flex-col px-2">
-      <header>
-        <img
-          src={Logo.src}
-          alt="Super Streamer Lobby 3"
-          style="filter: drop-shadow(-14px 14px 0px hsla(0, 0%, 0%, 25%));"
-        />
-      </header>
-      <div
-        class="grid gap-2 text-3xl font-semibold text-center grid-cols-2 max-lg:grid-cols-1"
-      >
-        <article>
-          <h2 class="font-extrabold">About</h2>
-          <p>
-            The Super Streamer Lobby is a recurring TETR.IO community event that
-            features over 200 streamers and their viewers battling it out in one
-            giant game for a chance to win twitch subscriptions, YT memberships,
-            rewards, and our streamer packages. With the help of the TETR.IO
-            admins, we take the Super Lobby format to the extreme by breaking
-            the game with some of the weirdest presets and bizarre settings.
-            Anyone and everyone is welcome to play!
-          </p>
-        </article>
-        <article>
-          <h2 class="font-extrabold">Wait, what's a "Super Lobby"?</h2>
-          <p>
-            A super lobby is a TETR.IO lobby with over 100 players, with no
-            upper limit to the player count. Everyone is versing each other,
-            until just 1 player remains. We usually pull 300 - 400 players each
-            event. It's kind of like Tetris 99, but on steroids. It might just
-            be the largest battle royale format ever.
-          </p>
-        </article>
+  <div
+    class="font-semibold scroll-smooth h-screen overflow-y-auto overflow-x-hidden"
+  >
+    <div class="grid place-content-center ssl-bg w-screen">
+      <div class="max-w-5xl flex flex-col px-2">
+        <header class="relative h-screen grid place-content-center">
+          <div class="flex flex-col">
+            <img
+              src={Logo.src}
+              alt="Super Streamer Lobby 3"
+              style="filter: drop-shadow(-14px 14px 0px hsla(0, 0%, 0%, 25%));"
+            />
+            <div>
+              <p class="px-5">
+                The community event featuring over 200 streamers and their
+                viewers battling it out in one TETR.IO match.
+              </p>
+            </div>
+          </div>
+          <a
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white shadow rounded-full p-1"
+            href="#about"
+          >
+            <ArrowDown size="2rem" />
+          </a>
+        </header>
+        <div id="about" class="flex flex-col min-h-screen p-2 gap-2">
+          <!-- Agenda Card -->
+          <div class="bg-white rounded p-2 max-w-md shadow">
+            <h2 class="font-bold text-xl">Agenda</h2>
+            <table class="table-fixed w-full">
+              <!-- <thead>
+                <tr>
+                  <th class="w-1/4">Thing</th>
+                  <th class="w-1/2">Time</th>
+                  <th class="w-1/4">Things</th>
+                </tr>
+              </thead> -->
+              <tbody>
+                {
+                  times.map((time) => (
+                    <tr>
+                      <td>{time.label}</td>
+                      <td class="text-center">{time.time}</td>
+                      <td class="text-right">{time.features}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+          <!-- Game modes -->
+          <div class="relative w-full h-40 py-20">
+            <div
+              class="ssl-scrolling-banner absolute h-full w-[calc(120vw)] left-0 -rotate-6"
+              style={{
+                "--width": `${Modes.width}px`,
+                backgroundImage: `url('${Modes.src}')`,
+                backgroundSize: `${Modes.width}px ${Modes.height}px`,
+                backgroundRepeat: "repeat-x",
+                backgroundPositionY: "center",
+              }}
+            >
+            </div>
+          </div>
+        </div>
+        <!-- <div
+          class="grid gap-2 text-center grid-cols-2 max-lg:grid-cols-1 min-h-screen"
+        >
+          <article>
+            <h2 class="font-extrabold">About</h2>
+            <p>
+              The Super Streamer Lobby is a recurring TETR.IO community event
+              that features over 200 streamers and their viewers battling it out
+              in one giant game for a chance to win twitch subscriptions, YT
+              memberships, rewards, and our streamer packages. With the help of
+              the TETR.IO admins, we take the Super Lobby format to the extreme
+              by breaking the game with some of the weirdest presets and bizarre
+              settings. Anyone and everyone is welcome to play!
+            </p>
+          </article>
+          <article>
+            <h2 class="font-extrabold">Wait, what's a "Super Lobby"?</h2>
+            <p>
+              A super lobby is a TETR.IO lobby with over 100 players, with no
+              upper limit to the player count. Everyone is versing each other,
+              until just 1 player remains. We usually pull 300 - 400 players
+              each event. It's kind of like Tetris 99, but on steroids. It might
+              just be the largest battle royale format ever.
+            </p>
+          </article>
+        </div> -->
       </div>
-    </main>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
   body {
     font-family: "Nunito Variable", sans-serif;
+  }
+
+  .ssl-bg {
     /* background: hsl(339, 70%, 80%);
     background: linear-gradient(
       155deg,
@@ -62,5 +143,18 @@ import Logo from "./_logo-3.png";
       hsl(38, 100%, 75%) 50%,
       hsl(262, 100%, 73%) 100%
     );
+  }
+
+  @keyframes background-scroll {
+    0% {
+      background-position-x: 0px;
+    }
+    100% {
+      background-position-x: var(--width);
+    }
+  }
+
+  .ssl-scrolling-banner {
+    animation: background-scroll 6s linear infinite;
   }
 </style>
