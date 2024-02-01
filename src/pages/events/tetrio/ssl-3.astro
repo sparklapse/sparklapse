@@ -5,24 +5,6 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Logo from "./_logo-3.png";
 import Modes from "./_modes.png";
 import { ArrowDown } from "lucide-svelte";
-
-const times = [
-  {
-    label: "Warm Up",
-    time: "5:30 - 6:00",
-    features: "abc",
-  },
-  {
-    label: "Main Event",
-    time: "5:30 - 6:00",
-    features: "abc",
-  },
-  {
-    label: "After Party",
-    time: "5:30 - 6:00",
-    features: "abc",
-  },
-];
 ---
 
 <BaseLayout title="Super Streamer Lobby 3">
@@ -80,13 +62,20 @@ const times = [
         </div>
       </div>
       <!-- Game modes -->
-      <div class="relative w-full h-[20rem] py-20 my-7">
+      <div
+        class="ssl-dynamic-scale relative w-full py-20 my-7"
+        style={{
+          "--width": `${Modes.width}px`,
+          "--height": `${Modes.height}px`,
+          height: "calc(var(--height)/var(--scale))",
+        }}
+      >
         <div
           class="ssl-scrolling-banner absolute h-full w-[calc(120vw)] top-0 -left-10 -rotate-6"
           style={{
-            "--width": `${Modes.width / 4}px`,
             backgroundImage: `url('${Modes.src}')`,
-            backgroundSize: `${Modes.width / 4}px ${Modes.height / 4}px`,
+            backgroundSize:
+              "calc(var(--width)/var(--scale)) calc(var(--height)/var(--scale))",
             backgroundRepeat: "repeat-x",
             backgroundPositionY: "center",
             filter: "drop-shadow(-7px 7px 4px hsla(0, 0%, 0%, 25%))",
@@ -97,7 +86,6 @@ const times = [
       <!-- Info Card -->
       <div class="max-w-3xl w-full flex justify-end">
         <div class="bg-white rounded p-2 max-w-md shadow">
-          <!-- <h2 class="font-bold text-xl">What is a super Lobby?</h2> -->
           <p>
             Once the games are concluded, we host an afterparty clip showcase on
             the main Twitch stream where streamers can submit clips and
@@ -173,6 +161,16 @@ const times = [
     filter: drop-shadow(0 0 4px hsla(0, 0%, 0%, 5%));
   }
 
+  .ssl-dynamic-scale {
+    --scale: 2;
+  }
+
+  @media not all and (min-width: 768px) {
+    .ssl-dynamic-scale {
+      --scale: 4;
+    }
+  }
+
   @keyframes background-scroll {
     0% {
       background-position-x: 0px;
@@ -183,6 +181,12 @@ const times = [
   }
 
   .ssl-scrolling-banner {
-    animation: background-scroll 28s linear infinite;
+    animation: background-scroll 42s linear infinite;
+  }
+
+  @media not all and (min-width: 768px) {
+    .ssl-scrolling-banner {
+      animation: background-scroll 56s linear infinite;
+    }
   }
 </style>
