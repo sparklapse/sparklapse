@@ -47,9 +47,9 @@ import { ArrowDown } from "lucide-svelte";
         </a>
       </header>
       <!-- Main event info -->
-      <section id="about" class="contents">
+      <section class="contents">
         <!-- Agenda Card -->
-        <div class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
+        <div id="about" class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
           <div class="flex flex-col">
             <h2 class="font-extrabold text-xl">Main Event</h2>
             <div class="bg-white rounded p-2 max-w-md shadow">
@@ -110,7 +110,25 @@ import { ArrowDown } from "lucide-svelte";
         </div>
       </section>
       <!-- Secondary events -->
-      <section class="contents"></section>
+      <section class="contents">
+        <div class="grid grid-cols-2 py-4 gap-2 max-w-4xl">
+          <div class="bg-white rounded p-4 shadow">
+            <h2 class="font-extrabold text-xl">Warm up event</h2>
+            <p>
+              Half an hour before the event, we hold some rank capped warm up
+              games (not reward/badge eligible)
+            </p>
+          </div>
+          <div class="bg-white rounded p-4 shadow">
+            <h2 class="font-extrabold text-xl">Afterparty showcase</h2>
+            <p>
+              After the games, we host an afterparty showcase on Twitch where
+              streamers can submit their clips and highlights to be featured
+              along with some interviews and giveaways.
+            </p>
+          </div>
+        </div>
+      </section>
       <!-- Spacer -->
       <div class="h-96"></div>
     </div>
