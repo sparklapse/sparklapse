@@ -52,56 +52,61 @@ const times = [
         </a>
       </header>
       <!-- Agenda Card -->
-      <div id="about" class="bg-white rounded p-2 max-w-md shadow">
-        <h2 class="font-bold text-xl">Agenda</h2>
-        <table class="table-fixed w-full">
-          <!-- <thead>
-              <tr>
-                <th class="w-1/4">Thing</th>
-                <th class="w-1/2">Time</th>
-                <th class="w-1/4">Things</th>
-              </tr>
-            </thead> -->
-          <tbody>
-            {
-              times.map((time) => (
+      <div class="max-w-3xl w-full flex">
+        <div id="about" class="bg-white rounded p-2 max-w-md shadow">
+          <h2 class="font-bold text-xl">Agenda</h2>
+          <table class="table-fixed w-full">
+            <!-- <thead>
                 <tr>
-                  <td>{time.label}</td>
-                  <td class="text-center">{time.time}</td>
-                  <td class="text-right">{time.features}</td>
+                  <th class="w-1/4">Thing</th>
+                  <th class="w-1/2">Time</th>
+                  <th class="w-1/4">Things</th>
                 </tr>
-              ))
-            }
-          </tbody>
-        </table>
+              </thead> -->
+            <tbody>
+              {
+                times.map((time) => (
+                  <tr>
+                    <td>{time.label}</td>
+                    <td class="text-center">{time.time}</td>
+                    <td class="text-right">{time.features}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
       </div>
       <!-- Game modes -->
-      <div class="relative w-full h-40 py-20 my-7">
+      <div class="relative w-full h-[20rem] py-20 my-7">
         <div
           class="ssl-scrolling-banner absolute h-full w-[calc(120vw)] top-0 -left-10 -rotate-6"
           style={{
-            "--width": `${Modes.width}px`,
+            "--width": `${Modes.width / 4}px`,
             backgroundImage: `url('${Modes.src}')`,
-            backgroundSize: `${Modes.width}px ${Modes.height}px`,
+            backgroundSize: `${Modes.width / 4}px ${Modes.height / 4}px`,
             backgroundRepeat: "repeat-x",
             backgroundPositionY: "center",
+            filter: "drop-shadow(-7px 7px 4px hsla(0, 0%, 0%, 25%))",
           }}
         >
         </div>
       </div>
       <!-- Agenda Card -->
-      <div id="about" class="bg-white rounded p-2 max-w-md shadow">
-        <h2 class="font-bold text-xl">What is a super Lobby?</h2>
-        <p>
-          A Super Lobby is a TETR.IO lobby with over 100 players, with no upper
-          limit to the player count. Everyone competes in a Battle Royale format
-          until just 1 player remains, with typically around 300 to 400 players
-          participating in each event. It might just be one of the largest
-          Battle Royale formats ever.
-        </p>
+      <div class="max-w-3xl w-full flex justify-end">
+        <div id="about" class="bg-white rounded p-2 max-w-md shadow">
+          <h2 class="font-bold text-xl">What is a super Lobby?</h2>
+          <p>
+            A Super Lobby is a TETR.IO lobby with over 100 players, with no
+            upper limit to the player count. Everyone competes in a Battle
+            Royale format until just 1 player remains, with typically around 300
+            to 400 players participating in each event. It might just be one of
+            the largest Battle Royale formats ever.
+          </p>
+        </div>
       </div>
       <!-- Spacer -->
-      <div class="h-10"></div>
+      <div class="h-96"></div>
     </div>
     <!-- <div
           class="grid gap-2 text-center grid-cols-2 max-lg:grid-cols-1 min-h-screen"
@@ -164,6 +169,6 @@ const times = [
   }
 
   .ssl-scrolling-banner {
-    animation: background-scroll 6s linear infinite;
+    animation: background-scroll 28s linear infinite;
   }
 </style>
