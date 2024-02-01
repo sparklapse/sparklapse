@@ -46,54 +46,71 @@ import { ArrowDown } from "lucide-svelte";
           <ArrowDown size="2rem" />
         </a>
       </header>
-      <!-- Agenda Card -->
-      <div id="about" class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
-        <div class="flex flex-col gap-2">
+      <!-- Main event info -->
+      <section id="about" class="contents">
+        <!-- Agenda Card -->
+        <div class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
+          <div class="flex flex-col">
+            <h2 class="font-extrabold text-xl">Main Event</h2>
+            <div class="bg-white rounded p-2 max-w-md shadow">
+              <p>
+                The main event consists of 8 standard games and 8 gimmick games,
+                with each game lasting 3-8 minutes. Gimmick games are a staple
+                of Super Streamer Lobbies, in which we run several custom
+                gamemodes to maximize laughs and clippable moments.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Agenda bullets Card -->
+        <!-- <div class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
+          <div class="flex flex-col">
+            <h2 class="font-extrabold text-5xl">16 Games</h2>
+            <ul>
+              <li>8 Standard Games</li>
+              <li>8 Custom Modes</li>
+            </ul>
+          </div>
+        </div> -->
+        <!-- Game modes -->
+        <div
+          class="ssl-dynamic-scale relative w-full py-20 my-7"
+          style={{
+            "--width": `${Modes.width}px`,
+            "--height": `${Modes.height}px`,
+            height: "calc(var(--height)/var(--scale))",
+          }}
+        >
+          <div
+            class="ssl-scrolling-banner absolute h-full w-[calc(120vw)] top-0 -left-10 -rotate-6"
+            style={{
+              backgroundImage: `url('${Modes.src}')`,
+              backgroundSize:
+                "calc(var(--width)/var(--scale)) calc(var(--height)/var(--scale))",
+              backgroundRepeat: "repeat-x",
+              backgroundPositionY: "center",
+              filter: "drop-shadow(-7px 7px 4px hsla(0, 0%, 0%, 25%))",
+            }}
+          >
+          </div>
+        </div>
+        <!-- Info Card -->
+        <div class="max-w-3xl w-full flex items-end flex-col">
+          <h2 class="font-extrabold text-xl">What is a super lobby?</h2>
           <div class="bg-white rounded p-2 max-w-md shadow">
-            <!-- <h2 class="font-bold text-xl">What is a super Lobby?</h2> -->
             <p>
-              The event starts off with warm up rank-capped games followed by 8
-              standard games and 8 gimmick games, with each game lasting 3-8
-              minutes. Gimmick games are a staple of Super Streamer Lobbies, in
-              which we run several custom gamemodes to maximize laughs and
-              clippable moments.
+              A Super Lobby is a TETR.IO lobby with at least 100 players, with
+              no upper limit to the player count. Everyone competes in a Battle
+              Royale format until just 1 player remains, with typically around
+              300 to 400 players participating in each event. It might just be
+              one of the largest Battle Royale formats ever. Anyone and everyone
+              is welcome to play!
             </p>
           </div>
         </div>
-      </div>
-      <!-- Game modes -->
-      <div
-        class="ssl-dynamic-scale relative w-full py-20 my-7"
-        style={{
-          "--width": `${Modes.width}px`,
-          "--height": `${Modes.height}px`,
-          height: "calc(var(--height)/var(--scale))",
-        }}
-      >
-        <div
-          class="ssl-scrolling-banner absolute h-full w-[calc(120vw)] top-0 -left-10 -rotate-6"
-          style={{
-            backgroundImage: `url('${Modes.src}')`,
-            backgroundSize:
-              "calc(var(--width)/var(--scale)) calc(var(--height)/var(--scale))",
-            backgroundRepeat: "repeat-x",
-            backgroundPositionY: "center",
-            filter: "drop-shadow(-7px 7px 4px hsla(0, 0%, 0%, 25%))",
-          }}
-        >
-        </div>
-      </div>
-      <!-- Info Card -->
-      <div class="max-w-3xl w-full flex justify-end">
-        <div class="bg-white rounded p-2 max-w-md shadow">
-          <p>
-            Once the games are concluded, we host an afterparty clip showcase on
-            the main Twitch stream where streamers can submit clips and
-            highlights from the event to be featured along with interviews and
-            giveaways.
-          </p>
-        </div>
-      </div>
+      </section>
+      <!-- Secondary events -->
+      <section class="contents"></section>
       <!-- Spacer -->
       <div class="h-96"></div>
     </div>
@@ -162,10 +179,10 @@ import { ArrowDown } from "lucide-svelte";
   }
 
   .ssl-dynamic-scale {
-    --scale: 2;
+    --scale: 3;
   }
 
-  @media not all and (min-width: 768px) {
+  @media not all and (min-width: 920px) {
     .ssl-dynamic-scale {
       --scale: 4;
     }
