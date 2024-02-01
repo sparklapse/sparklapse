@@ -31,16 +31,29 @@ const times = [
   >
     <div class="flex flex-col ssl-bg w-screen px-2 items-center">
       <header class="relative h-screen grid place-content-center max-w-3xl">
-        <div class="flex flex-col">
+        <div class="flex flex-col items-center">
           <img
             src={Logo.src}
             alt="Super Streamer Lobby 3"
             style="filter: drop-shadow(-14px 14px 0px hsla(0, 0%, 0%, 25%));"
           />
           <div>
-            <p class="px-5 text-lg">
+            <p class="px-7 text-xl text-center max-md:text-lg">
               The community event featuring over 200 streamers and their viewers
               battling it out in one TETR.IO match.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded shadow-xl px-4 py-2 text-xl w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
+          >
+            <p class="font-bold ssl-hyper-text">
+              <span>X Days</span>,
+              <span>X hours</span>,
+              <span>X Minutes</span>,
+              <span>X Seconds</span>
+            </p>
+            <p class="text-zinc-600 text-sm max-sm:text-xs">
+              6th of April, 6PM
             </p>
           </div>
         </div>
@@ -52,29 +65,18 @@ const times = [
         </a>
       </header>
       <!-- Agenda Card -->
-      <div class="max-w-3xl w-full flex">
-        <div id="about" class="bg-white rounded p-2 max-w-md shadow">
-          <h2 class="font-bold text-xl">Agenda</h2>
-          <table class="table-fixed w-full">
-            <!-- <thead>
-                <tr>
-                  <th class="w-1/4">Thing</th>
-                  <th class="w-1/2">Time</th>
-                  <th class="w-1/4">Things</th>
-                </tr>
-              </thead> -->
-            <tbody>
-              {
-                times.map((time) => (
-                  <tr>
-                    <td>{time.label}</td>
-                    <td class="text-center">{time.time}</td>
-                    <td class="text-right">{time.features}</td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
+      <div id="about" class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
+        <div class="flex flex-col gap-2">
+          <div class="bg-white rounded p-2 max-w-md shadow">
+            <!-- <h2 class="font-bold text-xl">What is a super Lobby?</h2> -->
+            <p>
+              The event starts off with warm up rank-capped games followed by 8
+              standard games and 8 gimmick games, with each game lasting 3-8
+              minutes. Gimmick games are a staple of Super Streamer Lobbies, in
+              which we run several custom gamemodes to maximize laughs and
+              clippable moments.
+            </p>
+          </div>
         </div>
       </div>
       <!-- Game modes -->
@@ -92,16 +94,15 @@ const times = [
         >
         </div>
       </div>
-      <!-- Agenda Card -->
+      <!-- Info Card -->
       <div class="max-w-3xl w-full flex justify-end">
-        <div id="about" class="bg-white rounded p-2 max-w-md shadow">
-          <h2 class="font-bold text-xl">What is a super Lobby?</h2>
+        <div class="bg-white rounded p-2 max-w-md shadow">
+          <!-- <h2 class="font-bold text-xl">What is a super Lobby?</h2> -->
           <p>
-            A Super Lobby is a TETR.IO lobby with over 100 players, with no
-            upper limit to the player count. Everyone competes in a Battle
-            Royale format until just 1 player remains, with typically around 300
-            to 400 players participating in each event. It might just be one of
-            the largest Battle Royale formats ever.
+            Once the games are concluded, we host an afterparty clip showcase on
+            the main Twitch stream where streamers can submit clips and
+            highlights from the event to be featured along with interviews and
+            giveaways.
           </p>
         </div>
       </div>
@@ -157,6 +158,19 @@ const times = [
       hsl(38, 100%, 75%) 50%,
       hsl(262, 100%, 73%) 100%
     );
+  }
+
+  .ssl-hyper-text {
+    color: transparent;
+    background: linear-gradient(
+      90deg,
+      hsl(339, 100%, 60%) 0%,
+      hsl(38, 100%, 50%) 50%,
+      hsl(262, 100%, 60%) 100%
+    );
+    background-repeat: repeat-x;
+    background-clip: text;
+    filter: drop-shadow(0 0 4px hsla(0, 0%, 0%, 5%));
   }
 
   @keyframes background-scroll {
