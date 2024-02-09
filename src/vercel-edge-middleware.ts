@@ -10,7 +10,5 @@ export default function ({
 }) {
   const loc = geolocation(request);
 
-  console.info("EDGE_MW", request, context);
-
   return { timezone: "Australia/Sydney" };
 }
