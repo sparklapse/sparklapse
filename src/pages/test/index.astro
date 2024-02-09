@@ -2,14 +2,21 @@
 import "@fontsource-variable/nunito";
 import BaseLayout from "$layouts/BaseLayout.astro";
 
-const dates = {
-  warmup: new Date("2024-04-06T22:30:00Z"),
-  main: new Date("2024-04-06T23:00:00Z"),
-  afterparty: new Date("2024-04-07T01:00:00Z"),
-};
+const date = new Date("2024-04-06T23:00:00Z");
 ---
 
 <BaseLayout>
   <h1>Hello, Astro!</h1>
-  <p class="whitespace-pre">{JSON.stringify(dates, null, 2)}</p>
+  <p class="whitespace-pre">
+    {
+      date.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "shortGeneric",
+      })
+    }
+  </p>
 </BaseLayout>
