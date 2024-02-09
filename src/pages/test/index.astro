@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/nunito";
 import BaseLayout from "$layouts/BaseLayout.astro";
+import Accordion from "$components/Accordion.svelte";
 
 const timeZone = Astro.locals.timezone ?? "EST";
 
@@ -51,5 +52,14 @@ const events = [
 
 <BaseLayout>
   <h1>Hello, Astro!</h1>
-  <p class="whitespace-pre">{JSON.stringify(events, null, 2)}</p>
+  <Accordion
+    client:idle
+    defaultValue="main-event"
+    items={events}
+    styles={{
+      container: "w-full",
+      item: "text-xl font-extrabold",
+      aside: "text-neutral-300",
+    }}
+  />
 </BaseLayout>
