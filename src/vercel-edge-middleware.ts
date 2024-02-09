@@ -11,7 +11,7 @@ export default function ({
 }) {
   const loc = geolocation(request);
 
-  let timezone = "EST";
+  let timezone = "Australia/Sydney";
   if (loc.latitude && loc.longitude) {
     let search = find(parseFloat(loc.latitude), parseFloat(loc.longitude));
     if (search.length > 0) timezone = search[0];
