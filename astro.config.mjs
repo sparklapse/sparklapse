@@ -17,9 +17,8 @@ export default defineConfig({
       },
     },
   },
-  output: "server",
+  output: "static",
   adapter: vercel({
-    edgeMiddleware: true,
     webAnalytics: {
       enabled: true,
     },

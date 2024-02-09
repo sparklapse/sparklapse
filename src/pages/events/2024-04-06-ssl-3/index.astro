@@ -7,8 +7,6 @@ import Modes from "./_modes.png";
 import { ArrowDown } from "lucide-svelte";
 import Accordion from "$components/Accordion.svelte";
 
-const timeZone = Astro.locals.timezone ?? "EST";
-
 const dates = {
   warmup: new Date("2024-04-06T22:30:00Z"),
   main: new Date("2024-04-06T23:00:00Z"),
@@ -23,7 +21,6 @@ const events = [
       hour: "numeric",
       minute: "2-digit",
       timeZoneName: "shortGeneric",
-      timeZone,
     }),
     description: "Join early for rank capped warm up games!",
   },
@@ -34,7 +31,6 @@ const events = [
       hour: "numeric",
       minute: "2-digit",
       timeZoneName: "shortGeneric",
-      timeZone,
     }),
     description:
       "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
@@ -46,7 +42,6 @@ const events = [
       hour: "numeric",
       minute: "2-digit",
       timeZoneName: "shortGeneric",
-      timeZone,
     }),
     description:
       "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
@@ -90,7 +85,6 @@ const events = [
                   hour: "numeric",
                   minute: "2-digit",
                   timeZoneName: "shortGeneric",
-                  timeZone,
                 })
               }
             </p>
@@ -164,9 +158,6 @@ const events = [
       </section>
       <!-- Spacer -->
       <div class="h-96"></div>
-      <div class="py-2">
-        <sub>{timeZone}</sub>
-      </div>
     </div>
   </div>
 </BaseLayout>
