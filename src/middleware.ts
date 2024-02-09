@@ -4,6 +4,8 @@ import { defineMiddleware } from "astro:middleware";
 export const onRequest = defineMiddleware(({ locals, request }, next) => {
   const loc = geolocation(request);
 
+  console.info(loc);
+
   let tz = `${loc.country}/${loc.city}`;
   try {
     const date = new Date();
