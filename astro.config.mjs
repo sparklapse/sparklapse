@@ -8,4 +8,12 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   site: "https://sparklapse.com",
   integrations: [mdx(), sitemap(), tailwind(), svelte()],
+  vite: {
+    resolve: {
+      alias: {
+        $components: "/src/components",
+        $layouts: "/src/layouts",
+      },
+    },
+  },
 });

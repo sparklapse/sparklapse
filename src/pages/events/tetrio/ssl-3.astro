@@ -1,10 +1,52 @@
 ---
 import "@fontsource-variable/nunito";
 
-import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BaseLayout from "$layouts/BaseLayout.astro";
 import Logo from "./_logo-3.png";
 import Modes from "./_modes.png";
 import { ArrowDown } from "lucide-svelte";
+import { Accordion } from "$components/svelte";
+
+const dates = {
+  warmup: new Date("2024-04-06T22:30:00Z"),
+  main: new Date("2024-04-06T23:00:00Z"),
+  afterparty: new Date("2024-04-07T01:00:00Z"),
+};
+
+const events = [
+  {
+    id: "warm-up",
+    title: "🔥 Warm Up Games",
+    aside: dates.warmup.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "shortGeneric",
+    }),
+    description: "Join early for rank capped warm up games!",
+  },
+  {
+    id: "main-event",
+    title: "🏆 Main Event",
+    aside: dates.main.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "shortGeneric",
+    }),
+    description:
+      "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
+  },
+  {
+    id: "afterparty",
+    title: "🎉 Afterparty Showcase",
+    aside: dates.afterparty.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "shortGeneric",
+    }),
+    description:
+      "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
+  },
+];
 ---
 
 <BaseLayout title="Super Streamer Lobby 3">
@@ -35,7 +77,16 @@ import { ArrowDown } from "lucide-svelte";
               <span>X Seconds</span>
             </p>
             <p class="text-zinc-600 text-sm max-sm:text-xs">
-              6th of April, 6PM
+              {
+                dates.main.toLocaleDateString("en-US", {
+                  weekday: "long",
+                  month: "long",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "2-digit",
+                  timeZoneName: "shortGeneric",
+                })
+              }
             </p>
           </div>
         </div>
@@ -51,7 +102,7 @@ import { ArrowDown } from "lucide-svelte";
         <!-- Agenda bullets -->
         <div class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
           <div class="flex flex-col">
-            <h2 class="font-extrabold text-5xl ssl-hyper-text">16 Games</h2>
+            <p class="font-extrabold text-5xl ssl-hyper-text">16 Games</p>
             <ul class="font-bold">
               <li class="text-xl">8 Standard Games</li>
               <li class="text-xl">8 Custom Modes</li>
@@ -85,29 +136,24 @@ import { ArrowDown } from "lucide-svelte";
           <ul class="font-bold">
             <li class="text-xl">Streamers and Viewers join</li>
           </ul>
-          <h2 class="font-extrabold text-5xl ssl-hyper-text">300+ Players</h2>
+          <p class="font-extrabold text-5xl ssl-hyper-text">300+ Players</p>
         </div>
       </section>
-      <div class="my-20"></div>
+      <div class="my-10"></div>
       <!-- Secondary events -->
       <section class="contents">
-        <div class="grid grid-cols-2 py-4 gap-2 max-w-4xl">
-          <div class="bg-white rounded p-4 shadow">
-            <h2 class="font-extrabold text-xl">
-              Warm up games <span class="text-zinc-500">5:30</span>
-            </h2>
-            <p>Join early for rank capped warm up games!</p>
-          </div>
-          <div class="bg-white rounded p-4 shadow">
-            <h2 class="font-extrabold text-xl">
-              Afterparty showcase <span class="text-zinc-500">8:00</span>
-            </h2>
-            <p>
-              Come watch the Twitch showcase of the best clips and highlights
-              from all 200 streamers in the event, along with some interviews
-              and giveaways!
-            </p>
-          </div>
+        <div class="mx-2 w-full max-w-xl">
+          <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">Events</h2>
+          <Accordion
+            client:idle
+            defaultValue="main-event"
+            items={events}
+            styles={{
+              container: "w-full",
+              item: "text-xl font-extrabold",
+              aside: "text-neutral-300",
+            }}
+          />
         </div>
       </section>
       <!-- Spacer -->
