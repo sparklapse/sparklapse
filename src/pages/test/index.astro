@@ -2,21 +2,54 @@
 import "@fontsource-variable/nunito";
 import BaseLayout from "$layouts/BaseLayout.astro";
 
-const date = new Date("2024-04-06T23:00:00Z");
+const timeZone = Astro.locals.timezone ?? "EST";
+
+const dates = {
+  warmup: new Date("2024-04-06T22:30:00Z"),
+  main: new Date("2024-04-06T23:00:00Z"),
+  afterparty: new Date("2024-04-07T01:00:00Z"),
+};
+
+const events = [
+  {
+    id: "warm-up",
+    title: "🔥 Warm Up Games",
+    aside: dates.warmup.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "shortGeneric",
+      timeZone,
+    }),
+    description: "Join early for rank capped warm up games!",
+  },
+  {
+    id: "main-event",
+    title: "🏆 Main Event",
+    aside: dates.main.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "shortGeneric",
+      timeZone,
+    }),
+    description:
+      "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
+  },
+  {
+    id: "afterparty",
+    title: "🎉 Afterparty Showcase",
+    aside: dates.afterparty.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "shortGeneric",
+      timeZone,
+    }),
+    description:
+      "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
+  },
+];
 ---
 
 <BaseLayout>
   <h1>Hello, Astro!</h1>
-  <p class="whitespace-pre">
-    {
-      date.toLocaleDateString("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        timeZoneName: "shortGeneric",
-      })
-    }
-  </p>
+  <p class="whitespace-pre">{JSON.stringify(events, null, 2)}</p>
 </BaseLayout>
