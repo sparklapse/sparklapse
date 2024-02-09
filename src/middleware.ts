@@ -4,7 +4,15 @@ import { defineMiddleware } from "astro:middleware";
 export const onRequest = defineMiddleware(({ locals, request }, next) => {
   const loc = geolocation(request);
 
-  if (loc.country && loc.city) locals.timezone = `${loc.country}/${loc.city}`;
+  let tz = `${loc.country}/${loc.city}`;
+  try {
+    const date = new Date();
+    date.toLocaleTimeString("en", { timeZone: tz });
+    locals.timezone = tz;
+  } catch (e) {
+    console.error(`Invalid timezone: ${tz}`);
+    console.error(e);
+  }
 
   return next();
 });
