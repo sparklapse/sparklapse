@@ -10,9 +10,9 @@ import LocalTime from "$components/LocalTime.svelte";
 import Accordion from "$components/Accordion.svelte";
 
 const dates = {
-  warmup: new Date("2024-04-06T22:30:00Z"),
-  main: new Date("2024-04-06T23:00:00Z"),
-  afterparty: new Date("2024-04-07T01:00:00Z"),
+  warmup: new Date("2024-04-06T21:30:00Z"),
+  main: new Date("2024-04-06T22:00:00Z"),
+  afterparty: new Date("2024-04-07T00:00:00Z"),
 };
 ---
 
@@ -154,7 +154,10 @@ const dates = {
         />
       </div>
     </section>
-    <!-- Spacer -->
+    <!-- Involed -->
+    <section class="contents">
+      <div class="mx-2 w-full max-w-xl"></div>
+    </section>
     <div class="h-96"></div>
   </div>
 </BaseLayout>
@@ -166,13 +169,6 @@ const dates = {
   }
 
   .ssl-bg {
-    /* background: hsl(339, 70%, 80%);
-    background: linear-gradient(
-      155deg,
-      hsl(339, 70%, 80%) 20%,
-      hsl(37, 70%, 80%) 50%,
-      hsl(262, 70%, 80%) 80%
-    ); */
     background: hsl(262, 100%, 73%);
     background: linear-gradient(
       155deg,
