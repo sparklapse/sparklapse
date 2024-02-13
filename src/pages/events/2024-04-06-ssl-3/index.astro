@@ -4,7 +4,7 @@ import "@fontsource-variable/nunito";
 import BaseLayout from "$layouts/BaseLayout.astro";
 import Logo from "./_logo-3.png";
 import Modes from "./_modes.png";
-import { ArrowDown } from "lucide-svelte";
+import { ArrowDown, Twitter } from "lucide-svelte";
 import CountDown from "$components/CountDown.svelte";
 import LocalTime from "$components/LocalTime.svelte";
 import Accordion from "$components/Accordion.svelte";
@@ -18,7 +18,7 @@ const dates = {
 
 <BaseLayout title="Super Streamer Lobby 3">
   <div class="flex flex-col ssl-bg w-screen px-2 items-center">
-    <header class="relative h-screen grid place-content-center max-w-3xl">
+    <header class="relative h-screen grid place-content-center max-w-4xl">
       <div class="flex flex-col items-center">
         <img
           src={Logo.src}
@@ -26,13 +26,13 @@ const dates = {
           style="filter: drop-shadow(-14px 14px 0px hsla(0, 0%, 0%, 25%));"
         />
         <div>
-          <p class="px-7 text-xl text-center max-md:text-lg">
+          <p class="px-7 text-2xl text-center max-md:text-lg">
             The community event featuring over 200 streamers and their viewers
             battling it out in one TETR.IO match.
           </p>
         </div>
         <div
-          class="bg-white rounded shadow-xl px-4 py-2 text-xl w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
+          class="bg-white rounded shadow-xl px-4 py-2 text-2xl w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
         >
           <p class="font-bold ssl-hyper-text drop-shadow shadow-dark">
             <CountDown date={dates.main} client:load />
@@ -63,7 +63,7 @@ const dates = {
     <!-- Main event info -->
     <section class="contents">
       <!-- Agenda bullets -->
-      <div class="max-w-4xl w-full flex gap-2 max-md:flex-wrap">
+      <div id="about" class="max-w-4xl w-full flex gap-2 max-md:flex-wrap">
         <div class="flex flex-col">
           <p class="font-extrabold text-5xl ssl-hyper-text">16 Games</p>
           <ul class="font-bold">
@@ -111,7 +111,6 @@ const dates = {
             Event Schedule
           </h2>
           <Accordion
-            client:load
             items={[
               {
                 id: "warm-up",
@@ -152,6 +151,7 @@ const dates = {
               item: "text-xl font-extrabold",
               aside: "text-neutral-300",
             }}
+            client:load
           />
         </div>
       </section>
@@ -170,13 +170,22 @@ const dates = {
         </div>
       </section>
     </div>
-    <div class="h-96"></div>
+    <section class="contents">
+      <div class="max-w-4xl w-full flex justify-center my-20">
+        <a
+          class="flex gap-2 bg-blue-200 p-2 rounded text-blue-900 shadow font-bold"
+          href="https://twitter.com/wyliecanttwitta/"
+          target="_blank"
+          rel="noopener noreferrer"><Twitter /> Contact Wylie</a
+        >
+      </div>
+    </section>
   </div>
 </BaseLayout>
 
-<style>
-  body {
-    @apply font-semibold scroll-smooth h-screen overflow-y-auto overflow-x-hidden;
+<style lang="postcss">
+  :global(.body) {
+    @apply font-semibold;
     font-family: "Nunito Variable", sans-serif;
   }
 
