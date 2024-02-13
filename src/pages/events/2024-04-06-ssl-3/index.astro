@@ -17,154 +17,151 @@ const dates = {
 ---
 
 <BaseLayout title="Super Streamer Lobby 3">
-  <div
-    class="font-semibold scroll-smooth h-screen overflow-y-auto overflow-x-hidden"
-  >
-    <div class="flex flex-col ssl-bg w-screen px-2 items-center">
-      <header class="relative h-screen grid place-content-center max-w-3xl">
-        <div class="flex flex-col items-center">
-          <img
-            src={Logo.src}
-            alt="Super Streamer Lobby 3"
-            style="filter: drop-shadow(-14px 14px 0px hsla(0, 0%, 0%, 25%));"
-          />
-          <div>
-            <p class="px-7 text-xl text-center max-md:text-lg">
-              The community event featuring over 200 streamers and their viewers
-              battling it out in one TETR.IO match.
-            </p>
-          </div>
-          <div
-            class="bg-white rounded shadow-xl px-4 py-2 text-xl w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
-          >
-            <p class="font-bold ssl-hyper-text drop-shadow shadow-dark">
-              <CountDown date={dates.main} client:load />
-            </p>
-            <p class="text-zinc-600 text-sm max-sm:text-xs">
-              <LocalTime
-                date={dates.main}
-                options={{
-                  weekday: "long",
-                  month: "long",
-                  day: "numeric",
-                  hour: "numeric",
-                  minute: "2-digit",
-                  timeZoneName: "shortGeneric",
-                }}
-                client:load
-              />
-            </p>
-          </div>
+  <div class="flex flex-col ssl-bg w-screen px-2 items-center">
+    <header class="relative h-screen grid place-content-center max-w-3xl">
+      <div class="flex flex-col items-center">
+        <img
+          src={Logo.src}
+          alt="Super Streamer Lobby 3"
+          style="filter: drop-shadow(-14px 14px 0px hsla(0, 0%, 0%, 25%));"
+        />
+        <div>
+          <p class="px-7 text-xl text-center max-md:text-lg">
+            The community event featuring over 200 streamers and their viewers
+            battling it out in one TETR.IO match.
+          </p>
         </div>
-        <a
-          class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white shadow rounded-full p-1"
-          href="#about"
-        >
-          <ArrowDown size="2rem" />
-        </a>
-      </header>
-      <!-- Main event info -->
-      <section class="contents">
-        <!-- Agenda bullets -->
-        <div class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
-          <div class="flex flex-col">
-            <p class="font-extrabold text-5xl ssl-hyper-text">16 Games</p>
-            <ul class="font-bold">
-              <li class="text-xl">8 Standard Games</li>
-              <li class="text-xl">8 Custom Modes</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Game modes -->
         <div
-          class="ssl-dynamic-scale relative w-full py-20 my-7"
+          class="bg-white rounded shadow-xl px-4 py-2 text-xl w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
+        >
+          <p class="font-bold ssl-hyper-text drop-shadow shadow-dark">
+            <CountDown date={dates.main} client:load />
+          </p>
+          <p class="text-zinc-600 text-sm max-sm:text-xs">
+            <LocalTime
+              date={dates.main}
+              options={{
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                hour: "numeric",
+                minute: "2-digit",
+                timeZoneName: "shortGeneric",
+              }}
+              client:load
+            />
+          </p>
+        </div>
+      </div>
+      <a
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white shadow rounded-full p-1"
+        href="#about"
+      >
+        <ArrowDown size="2rem" />
+      </a>
+    </header>
+    <!-- Main event info -->
+    <section class="contents">
+      <!-- Agenda bullets -->
+      <div class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
+        <div class="flex flex-col">
+          <p class="font-extrabold text-5xl ssl-hyper-text">16 Games</p>
+          <ul class="font-bold">
+            <li class="text-xl">8 Standard Games</li>
+            <li class="text-xl">8 Custom Modes</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Game modes -->
+      <div
+        class="ssl-dynamic-scale relative w-full py-20 my-7"
+        style={{
+          "--width": `${Modes.width}px`,
+          "--height": `${Modes.height}px`,
+          height: "calc(var(--height)/var(--scale))",
+        }}
+      >
+        <div
+          class="ssl-scrolling-banner absolute h-full w-[calc(120vw)] top-0 -left-10 -rotate-6"
           style={{
-            "--width": `${Modes.width}px`,
-            "--height": `${Modes.height}px`,
-            height: "calc(var(--height)/var(--scale))",
+            backgroundImage: `url('${Modes.src}')`,
+            backgroundSize:
+              "calc(var(--width)/var(--scale)) calc(var(--height)/var(--scale))",
+            backgroundRepeat: "repeat-x",
+            backgroundPositionY: "center",
+            filter: "drop-shadow(-7px 7px 4px hsla(0, 0%, 0%, 25%))",
           }}
         >
-          <div
-            class="ssl-scrolling-banner absolute h-full w-[calc(120vw)] top-0 -left-10 -rotate-6"
-            style={{
-              backgroundImage: `url('${Modes.src}')`,
-              backgroundSize:
-                "calc(var(--width)/var(--scale)) calc(var(--height)/var(--scale))",
-              backgroundRepeat: "repeat-x",
-              backgroundPositionY: "center",
-              filter: "drop-shadow(-7px 7px 4px hsla(0, 0%, 0%, 25%))",
-            }}
-          >
-          </div>
         </div>
-        <!-- Info Card -->
-        <div class="max-w-3xl w-full flex items-end flex-col text-right">
-          <ul class="font-bold">
-            <li class="text-xl">Streamers and Viewers totalling</li>
-          </ul>
-          <p class="font-extrabold text-5xl ssl-hyper-text">300+ Players</p>
-        </div>
-      </section>
-      <div class="my-10"></div>
-      <!-- Secondary events -->
-      <section class="contents">
-        <div class="mx-2 w-full max-w-xl">
-          <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">
-            Event Schedule
-          </h2>
-          <Accordion
-            client:idle
-            items={[
-              {
-                id: "warm-up",
-                title: "🔥 Warm Up Games",
-                aside: dates.warmup.toLocaleTimeString("en-US", {
-                  hour: "numeric",
-                  minute: "2-digit",
-                  timeZoneName: "shortGeneric",
-                }),
-                description: "Join early for rank capped warm up games!",
-              },
-              {
-                id: "main-event",
-                title: "🏆 Main Event",
-                aside: dates.main.toLocaleTimeString("en-US", {
-                  hour: "numeric",
-                  minute: "2-digit",
-                  timeZoneName: "shortGeneric",
-                }),
-                description:
-                  "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
-              },
-              {
-                id: "afterparty",
-                title: "🎉 Afterparty Showcase",
-                aside: dates.afterparty.toLocaleTimeString("en-US", {
-                  hour: "numeric",
-                  minute: "2-digit",
-                  timeZoneName: "shortGeneric",
-                }),
-                description:
-                  "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
-              },
-            ]}
-            defaultValue="main-event"
-            styles={{
-              container: "w-full",
-              item: "text-xl font-extrabold",
-              aside: "text-neutral-300",
-            }}
-          />
-        </div>
-      </section>
-      <!-- Spacer -->
-      <div class="h-96"></div>
-    </div>
+      </div>
+      <!-- Info Card -->
+      <div class="max-w-3xl w-full flex items-end flex-col text-right">
+        <ul class="font-bold">
+          <li class="text-xl">Streamers and Viewers totalling</li>
+        </ul>
+        <p class="font-extrabold text-5xl ssl-hyper-text">300+ Players</p>
+      </div>
+    </section>
+    <div class="my-10"></div>
+    <!-- Secondary events -->
+    <section class="contents">
+      <div class="mx-2 w-full max-w-xl">
+        <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">
+          Event Schedule
+        </h2>
+        <Accordion
+          client:idle
+          items={[
+            {
+              id: "warm-up",
+              title: "🔥 Warm Up Games",
+              aside: dates.warmup.toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "2-digit",
+                timeZoneName: "shortGeneric",
+              }),
+              description: "Join early for rank capped warm up games!",
+            },
+            {
+              id: "main-event",
+              title: "🏆 Main Event",
+              aside: dates.main.toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "2-digit",
+                timeZoneName: "shortGeneric",
+              }),
+              description:
+                "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
+            },
+            {
+              id: "afterparty",
+              title: "🎉 Afterparty Showcase",
+              aside: dates.afterparty.toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "2-digit",
+                timeZoneName: "shortGeneric",
+              }),
+              description:
+                "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
+            },
+          ]}
+          defaultValue="main-event"
+          styles={{
+            container: "w-full",
+            item: "text-xl font-extrabold",
+            aside: "text-neutral-300",
+          }}
+        />
+      </div>
+    </section>
+    <!-- Spacer -->
+    <div class="h-96"></div>
   </div>
 </BaseLayout>
 
 <style>
   body {
+    @apply font-semibold scroll-smooth h-screen overflow-y-auto overflow-x-hidden;
     font-family: "Nunito Variable", sans-serif;
   }
 
