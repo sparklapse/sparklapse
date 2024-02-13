@@ -63,7 +63,7 @@ const dates = {
     <!-- Main event info -->
     <section class="contents">
       <!-- Agenda bullets -->
-      <div class="max-w-3xl w-full flex gap-2 max-md:flex-wrap">
+      <div class="max-w-4xl w-full flex gap-2 max-md:flex-wrap">
         <div class="flex flex-col">
           <p class="font-extrabold text-5xl ssl-hyper-text">16 Games</p>
           <ul class="font-bold">
@@ -94,8 +94,8 @@ const dates = {
         >
         </div>
       </div>
-      <!-- Info Card -->
-      <div class="max-w-3xl w-full flex items-end flex-col text-right">
+      <!-- Players Stats -->
+      <div class="max-w-4xl w-full flex items-end flex-col text-right">
         <ul class="font-bold">
           <li class="text-xl">Streamers and Viewers totalling</li>
         </ul>
@@ -104,60 +104,72 @@ const dates = {
     </section>
     <div class="my-10"></div>
     <!-- Secondary events -->
-    <section class="contents">
-      <div class="mx-2 w-full max-w-xl">
-        <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">
-          Event Schedule
-        </h2>
-        <Accordion
-          client:load
-          items={[
-            {
-              id: "warm-up",
-              title: "🔥 Warm Up Games",
-              aside: dates.warmup.toLocaleTimeString("en-US", {
-                hour: "numeric",
-                minute: "2-digit",
-                timeZoneName: "shortGeneric",
-              }),
-              description: "Join early for rank capped warm up games!",
-            },
-            {
-              id: "main-event",
-              title: "🏆 Main Event",
-              aside: dates.main.toLocaleTimeString("en-US", {
-                hour: "numeric",
-                minute: "2-digit",
-                timeZoneName: "shortGeneric",
-              }),
-              description:
-                "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
-            },
-            {
-              id: "afterparty",
-              title: "🎉 Afterparty Showcase",
-              aside: dates.afterparty.toLocaleTimeString("en-US", {
-                hour: "numeric",
-                minute: "2-digit",
-                timeZoneName: "shortGeneric",
-              }),
-              description:
-                "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
-            },
-          ]}
-          defaultValue="main-event"
-          styles={{
-            container: "w-full",
-            item: "text-xl font-extrabold",
-            aside: "text-neutral-300",
-          }}
-        />
-      </div>
-    </section>
-    <!-- Involed -->
-    <section class="contents">
-      <div class="mx-2 w-full max-w-xl"></div>
-    </section>
+    <div class="grid grid-cols-2 max-lg:grid-cols-1 gap-2 max-lg:gap-10">
+      <section class="contents">
+        <div class="mx-2 w-full max-w-xl">
+          <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">
+            Event Schedule
+          </h2>
+          <Accordion
+            client:load
+            items={[
+              {
+                id: "warm-up",
+                title: "🔥 Warm Up Games",
+                aside: dates.warmup.toLocaleTimeString("en-US", {
+                  hour: "numeric",
+                  minute: "2-digit",
+                  timeZoneName: "shortGeneric",
+                }),
+                description: "Join early for rank capped warm up games!",
+              },
+              {
+                id: "main-event",
+                title: "🏆 Main Event",
+                aside: dates.main.toLocaleTimeString("en-US", {
+                  hour: "numeric",
+                  minute: "2-digit",
+                  timeZoneName: "shortGeneric",
+                }),
+                description:
+                  "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
+              },
+              {
+                id: "afterparty",
+                title: "🎉 Afterparty Showcase",
+                aside: dates.afterparty.toLocaleTimeString("en-US", {
+                  hour: "numeric",
+                  minute: "2-digit",
+                  timeZoneName: "shortGeneric",
+                }),
+                description:
+                  "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
+              },
+            ]}
+            defaultValue="main-event"
+            styles={{
+              container: "w-full",
+              item: "text-xl font-extrabold",
+              aside: "text-neutral-300",
+            }}
+          />
+        </div>
+      </section>
+      <!-- Involed -->
+      <section class="contents">
+        <div class="mx-2 w-full max-w-xl">
+          <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">
+            Streamers Involved
+          </h2>
+          <div class="bg-white shadow rounded p-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            numquam velit aspernatur excepturi incidunt ea ducimus dolor
+            temporibus dolorum eaque laboriosam fugiat voluptate fuga sunt,
+            deleniti, esse aut aliquid facere.
+          </div>
+        </div>
+      </section>
+    </div>
     <div class="h-96"></div>
   </div>
 </BaseLayout>

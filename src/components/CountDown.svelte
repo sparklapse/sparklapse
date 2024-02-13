@@ -26,18 +26,18 @@
 {#key timeLeft}
   {#if days > 0}
     <span>
-      {days} Day{#if days !== 1}s{/if}
-    </span>,
+      {days} Day{#if days !== 1}s{/if},
+    </span>
   {/if}
   {#if hours > 0}
     <span>
-      {hours} hour{#if hours !== 1}s{/if}
-    </span>,
+      {hours} hour{#if hours !== 1}s{/if},
+    </span>
   {/if}
   {#if minutes > 0}
     <span>
-      {minutes} Minute{#if minutes !== 1}s{/if}
-    </span>,
+      {minutes} Minute{#if minutes !== 1}s{/if},
+    </span>
   {/if}
   <span>
     {seconds} Second{#if seconds !== 1}s{/if}
