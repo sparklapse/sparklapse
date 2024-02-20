@@ -13,6 +13,7 @@ export default defineConfig({
     resolve: {
       alias: {
         $components: "/src/components",
+        $connections: "/src/connections",
         $layouts: "/src/layouts",
       },
     },

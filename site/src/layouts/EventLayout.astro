@@ -1,0 +1,52 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  summary: string;
+  description?: string;
+  image?: string;
+  twitterCard?: "summary" | "summary_large_image" | "app" | "player";
+}
+
+const {
+  title,
+  description,
+  summary,
+  image,
+  twitterCard = "summary",
+} = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <Fragment slot="head">
+    {
+      title && (
+        <>
+          <meta property="og:title" content={title} />
+          <meta property="twitter:title" content={title} />
+        </>
+      )
+    }
+    {
+      summary && (
+        <>
+          <meta property="og:description" content={summary} />
+          <meta property="twitter:description" content={summary} />
+          {!description && <meta property="description" content={summary} />}
+        </>
+      )
+    }
+    {description && <meta property="og:description" content={description} />}
+    {
+      image && (
+        <>
+          <meta property="og:image" content={image} />
+          <meta property="twitter:image" content={image} />
+        </>
+      )
+    }
+    {twitterCard && <meta property="twitter:card" content={twitterCard} />}
+  </Fragment>
+  <slot />
+</BaseLayout>

@@ -1,13 +1,15 @@
 ---
 import "@fontsource-variable/nunito";
 
-import BaseLayout from "$layouts/BaseLayout.astro";
-import Logo from "./_logo-3.png";
-import Modes from "./_modes.png";
+import EventLayout from "$layouts/EventLayout.astro";
 import { ArrowDown, Twitter } from "lucide-svelte";
 import CountDown from "$components/CountDown.svelte";
 import LocalTime from "$components/LocalTime.svelte";
+import Logo from "./_logo-3.png";
+import Modes from "./_modes.png";
+import Embed from "./_embed.png";
 import Accordion from "./_Accordion.svelte";
+import Participating from "./_Participating.svelte";
 
 const dates = {
   warmup: new Date("2024-04-06T21:30:00Z"),
@@ -16,7 +18,13 @@ const dates = {
 };
 ---
 
-<BaseLayout title="Super Streamer Lobby 3">
+<EventLayout
+  title="Super Streamer Lobby 3"
+  summary="Join and play with over 200 TETR.IO streamers!"
+  description="The third Super Streamer Lobby event has been announced! To read more about one of the largest streamer collaborations, click here!"
+  image={Embed.src}
+  twitterCard="summary_large_image"
+>
   <div class="flex flex-col ssl-bg w-screen px-2 items-center">
     <header class="relative h-screen grid place-content-center max-w-4xl">
       <div class="flex flex-col items-center">
@@ -120,10 +128,7 @@ const dates = {
             Streamers Involved
           </h2>
           <div class="bg-white shadow rounded p-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            numquam velit aspernatur excepturi incidunt ea ducimus dolor
-            temporibus dolorum eaque laboriosam fugiat voluptate fuga sunt,
-            deleniti, esse aut aliquid facere.
+            <Participating client:idle />
           </div>
         </div>
       </section>
@@ -197,7 +202,7 @@ const dates = {
       </div>
     </section>
   </div>
-</BaseLayout>
+</EventLayout>
 
 <style lang="postcss">
   :global(.body) {
