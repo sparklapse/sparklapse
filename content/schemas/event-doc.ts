@@ -12,6 +12,32 @@ export const EventDoc = list({
       update: () => true,
     },
     item: {
+      create: async ({ session, inputData, context }) => {
+        if (session?.data.isAdmin) return true;
+
+        const { managers } = (await context.query.Event.findOne({
+          where: { id: inputData.eventId as string },
+          query: "managers { id }",
+        })) as { managers: { id: string }[] };
+
+        if (managers.some((manager) => manager.id === session?.data.id))
+          return true;
+
+        return false;
+      },
+      delete: async ({ session, item, context }) => {
+        if (session?.data.isAdmin) return true;
+
+        const { managers } = (await context.query.Event.findOne({
+          where: { id: item.eventId as string },
+          query: "managers { id }",
+        })) as { managers: { id: string }[] };
+
+        if (managers.some((manager) => manager.id === session?.data.id))
+          return true;
+
+        return false;
+      },
       update: async ({ session, item, context }) => {
         if (session?.data.isAdmin) return true;
 
