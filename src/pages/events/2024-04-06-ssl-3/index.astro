@@ -7,7 +7,7 @@ import Modes from "./_modes.png";
 import { ArrowDown, Twitter } from "lucide-svelte";
 import CountDown from "$components/CountDown.svelte";
 import LocalTime from "$components/LocalTime.svelte";
-import Accordion from "$components/Accordion.svelte";
+import Accordion from "./_Accordion.svelte";
 
 const dates = {
   warmup: new Date("2024-04-06T21:30:00Z"),
@@ -110,49 +110,7 @@ const dates = {
           <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">
             Event Schedule
           </h2>
-          <Accordion
-            items={[
-              {
-                id: "warm-up",
-                title: "🔥 Warm Up Games",
-                aside: dates.warmup.toLocaleTimeString("en-US", {
-                  hour: "numeric",
-                  minute: "2-digit",
-                  timeZoneName: "shortGeneric",
-                }),
-                description: "Join early for rank capped warm up games!",
-              },
-              {
-                id: "main-event",
-                title: "🏆 Main Event",
-                aside: dates.main.toLocaleTimeString("en-US", {
-                  hour: "numeric",
-                  minute: "2-digit",
-                  timeZoneName: "shortGeneric",
-                }),
-                description:
-                  "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
-              },
-              {
-                id: "afterparty",
-                title: "🎉 Afterparty Showcase",
-                aside: dates.afterparty.toLocaleTimeString("en-US", {
-                  hour: "numeric",
-                  minute: "2-digit",
-                  timeZoneName: "shortGeneric",
-                }),
-                description:
-                  "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
-              },
-            ]}
-            defaultValue="main-event"
-            styles={{
-              container: "w-full",
-              item: "text-xl font-extrabold",
-              aside: "text-neutral-300",
-            }}
-            client:load
-          />
+          <Accordion {dates} client:idle />
         </div>
       </section>
       <!-- Involed -->
