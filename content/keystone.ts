@@ -10,7 +10,9 @@ export default withAuth(
     server: {
       port: 3000,
       cors: {
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         origin: ["https://sparklapse.com", "http://localhost:3000"],
+        credentials: true,
       },
     },
     db: {
