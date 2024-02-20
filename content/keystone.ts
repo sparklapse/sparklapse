@@ -7,6 +7,12 @@ dotenv.config();
 
 export default withAuth(
   config({
+    server: {
+      port: 3000,
+      cors: {
+        origin: ["https://sparklapse.com", "http://localhost:3000"],
+      },
+    },
     db: {
       provider: "postgresql" as const,
       url: process.env.DB_CONNSTR!,
