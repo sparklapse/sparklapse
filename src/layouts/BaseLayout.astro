@@ -18,6 +18,10 @@ const { title } = Astro.props;
     <link rel="shortcut icon" href="/favicon.png" type="image/png" />
   </head>
   <body>
-    <slot />
+    <div
+      class="body scroll-smooth h-screen overflow-y-auto overflow-x-hidden scrollbar-thin"
+    >
+      <slot />
+    </div>
   </body>
 </html>
