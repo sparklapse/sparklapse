@@ -1,5 +1,4 @@
 import typographyPlugin from "@tailwindcss/typography";
-import { dotsUIPlugin } from "@sparklapse/dots/ui/tailwind";
 
 /** @type {import("tailwindcss").Config} */
 export default {
@@ -7,5 +6,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [typographyPlugin(), dotsUIPlugin()],
+  plugins: [typographyPlugin()],
 };
