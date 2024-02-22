@@ -48,7 +48,7 @@
       id: "prizes",
       title: "🎁 Prizes",
       description:
-        "During the main event, have your chance at winning gifted subs to those streaming the event!",
+        "During the main event, have your chance at winning gifted subs to those streaming the event! A raffle will be open at the start of the main event for a chance to win fully paid comissioned work from @milkthos_sena. Winners of the raffle will be announced during the afterparty showcase.",
     },
   ]}
   defaultValue="main-event"

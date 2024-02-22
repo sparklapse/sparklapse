@@ -57,7 +57,7 @@
     .map((v, i) => [v, streamers[i + Math.floor(streamers.length / 2)]]);
 </script>
 
-<div class="max-h-80 overflow-hidden">
+<div class="max-h-72 overflow-hidden">
   <div class="text-xl font-bold" bind:this={scroller}>
     <div class="flex flex-col">
       {#each doubleCol as [a, b]}
