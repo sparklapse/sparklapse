@@ -15,3 +15,11 @@ body {
     rgba(191, 238, 254, 1) 100%
   );
 }
+
+/* Scale up for large scale displays */
+@media screen and (min-width: 2560px) and (min-height: 1440px) {
+  html,
+  body {
+    font-size: calc(1rem + 1vmin);
+  }
+}
