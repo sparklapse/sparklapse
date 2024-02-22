@@ -26,12 +26,12 @@ const { date } = Astro.props;
       </p>
     </div>
     <div
-      class="bg-white rounded shadow-xl px-4 py-2 text-2xl w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
+      class="bg-white rounded shadow-xl px-4 py-2 w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
     >
-      <p class="font-bold ssl-hyper-text drop-shadow shadow-dark">
+      <p class="font-bold ssl-hyper-text drop-shadow shadow-dark text-2xl">
         <CountDown date={date} client:load />
       </p>
-      <p class="text-zinc-600 text-sm max-sm:text-xs">
+      <p class="text-zinc-600 max-sm:text-xs">
         <LocalTime
           date={date}
           options={{

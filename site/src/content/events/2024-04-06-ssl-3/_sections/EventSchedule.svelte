@@ -19,7 +19,8 @@
         minute: "2-digit",
         timeZoneName: "shortGeneric",
       }),
-      description: "Join early for rank capped warm up games!",
+      description:
+        "Join early for rank-capped warm up games!\n(No prizes, just for fun!)",
     },
     {
       id: "main-event",
@@ -42,6 +43,12 @@
       }),
       description:
         "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
+    },
+    {
+      id: "prizes",
+      title: "🎁 Prizes",
+      description:
+        "During the main event, have your chance at winning gifted subs to those streaming the event!",
     },
   ]}
   defaultValue="main-event"

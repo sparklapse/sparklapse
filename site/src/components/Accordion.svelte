@@ -61,7 +61,7 @@
           use:melt={$content(id)}
           transition:slide
         >
-          <div class="px-5 py-4">
+          <div class="px-5 py-4 whitespace-pre-wrap">
             {description}
           </div>
         </div>
