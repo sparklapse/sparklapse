@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import credits from "./credits.json";
+import type { ImageMetadata } from "astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "./profiles/*.{png,jpg,gif}",
+  { eager: true }
+);
+---
+
+<section class="contents not-prose">
+  <h2 class="ssl-hyper-text text-3xl font-extrabold">Credits</h2>
+  <div class="w-full max-w-3xl flex flex-wrap justify-center">
+    {
+      credits.map((credit, index) => (
+        <>
+          {credits[index - 1]?.credit !== credit.credit && (
+            <div class="w-full my-2" />
+          )}
+          <a
+            href={credit.url}
+            target="_blank"
+            class="flex flex-col justify-center items-center gap-1 h-36 w-28 drop-shadow"
+          >
+            <Image
+              src={images[`./profiles/${credit.image}`].default}
+              class="bg-white aspect-square w-24 rounded"
+              alt={credit.name}
+            />
+            <div class="text-center">
+              <p class="font-bold leading-tight underline">{credit.name}</p>
+              <p class="text-xs font-extrabold leading-none">{credit.credit}</p>
+            </div>
+          </a>
+        </>
+      ))
+    }
+  </div>
+</section>

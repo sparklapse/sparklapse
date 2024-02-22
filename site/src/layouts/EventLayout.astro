@@ -5,7 +5,7 @@ interface Props {
   title: string;
   summary: string;
   description?: string;
-  image?: string;
+  image?: { src: string };
   twitterCard?: "summary" | "summary_large_image" | "app" | "player";
 }
 
@@ -41,12 +41,14 @@ const {
     {
       image && (
         <>
-          <meta property="og:image" content={image} />
-          <meta property="twitter:image" content={image} />
+          <meta property="og:image" content={image.src} />
+          <meta property="twitter:image" content={image.src} />
         </>
       )
     }
     {twitterCard && <meta property="twitter:card" content={twitterCard} />}
   </Fragment>
-  <slot />
+  <div class="flex flex-col items-center">
+    <slot />
+  </div>
 </BaseLayout>

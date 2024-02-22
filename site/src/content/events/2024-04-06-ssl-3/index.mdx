@@ -1,0 +1,29 @@
+---
+title: "Super Streamer Lobby 3"
+summary: "Join and play with over 200 TETR.IO streamers!"
+description: "The third Super Streamer Lobby event has been announced! To read more about one of the largest streamer collaborations, click here!"
+image: "./embed.png"
+twitterCard: "summary_large_image"
+---
+
+import "./styles.pcss";
+import "@fontsource-variable/nunito";
+
+import Splash from "./sections/Splash.astro";
+import HypeInfo from "./sections/HypeInfo.astro";
+import Details from "./sections/Details.astro";
+import Credits from "./sections/Credits.astro";
+
+export const dates = {
+  warmup: new Date("2024-04-06T21:30:00Z"),
+  main: new Date("2024-04-06T22:00:00Z"),
+  afterparty: new Date("2024-04-07T00:00:00Z"),
+};
+
+<Splash date={dates.main} />
+<HypeInfo />
+<div class="my-20" />
+<Details dates={dates} />
+<div class="my-10" />
+<Credits />
+<div class="my-10" />

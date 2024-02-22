@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import { ArrowDown } from "lucide-svelte";
+import CountDown from "$components/CountDown.svelte";
+import LocalTime from "$components/LocalTime.svelte";
+import Logo from "./logo3.png";
+
+interface Props {
+  date: Date;
+}
+
+const { date } = Astro.props;
+---
+
+<header class="relative h-screen grid place-content-center max-w-4xl not-prose">
+  <div class="flex flex-col items-center">
+    <Image
+      src={Logo}
+      alt="Super Streamer Lobby 3"
+      style="filter: drop-shadow(-14px 14px 0px hsla(0, 0%, 0%, 25%));"
+    />
+    <div>
+      <p class="px-7 text-2xl text-center max-md:text-lg">
+        The community event featuring over 200 streamers and their viewers
+        battling it out in one TETR.IO match.
+      </p>
+    </div>
+    <div
+      class="bg-white rounded shadow-xl px-4 py-2 text-2xl w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
+    >
+      <p class="font-bold ssl-hyper-text drop-shadow shadow-dark">
+        <CountDown date={date} client:load />
+      </p>
+      <p class="text-zinc-600 text-sm max-sm:text-xs">
+        <LocalTime
+          date={date}
+          options={{
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+            timeZoneName: "shortGeneric",
+          }}
+          client:load
+        />
+      </p>
+    </div>
+  </div>
+  <a
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white shadow rounded-full p-1"
+    href="#about"
+  >
+    <ArrowDown size="2rem" />
+  </a>
+</header>

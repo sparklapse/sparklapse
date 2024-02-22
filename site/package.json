@@ -21,6 +21,7 @@
     "@fontsource-variable/gabarito": "^5.0.2",
     "@fontsource-variable/nunito": "^5.0.17",
     "astro": "^4.1.2",
+    "astro-min": "^1.2.5",
     "clsx": "^2.1.0",
     "lucide-svelte": "^0.320.0",
     "svelte": "^4.2.9",

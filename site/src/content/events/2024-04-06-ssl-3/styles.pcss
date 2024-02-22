@@ -1,0 +1,58 @@
+.body {
+  @apply font-semibold;
+  font-family: "Nunito Variable", sans-serif;
+  background: hsl(262, 100%, 73%);
+  background: linear-gradient(
+    155deg,
+    hsl(339, 100%, 75%) 0%,
+    hsl(38, 100%, 75%) 50%,
+    hsl(262, 100%, 73%) 100%
+  );
+}
+
+.ssl-hyper-text {
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    hsl(339, 100%, 60%) 0%,
+    hsl(38, 100%, 50%) 50%,
+    hsl(262, 100%, 60%) 100%
+  );
+  background-repeat: repeat-x;
+  background-clip: text;
+  filter: drop-shadow(1.5px 1.5px white) drop-shadow(-1.5px -1.5px white)
+    drop-shadow(1.5px -1.5px white) drop-shadow(-1.5px 1.5px white);
+}
+
+.ssl-hyper-text.shadow-dark {
+  filter: drop-shadow(0px 0px 4px hsla(0, 0, 0, 10%));
+}
+
+.ssl-dynamic-scale {
+  --scale: 3;
+}
+
+@media not all and (min-width: 920px) {
+  .ssl-dynamic-scale {
+    --scale: 4;
+  }
+}
+
+@keyframes background-scroll {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: var(--width);
+  }
+}
+
+.ssl-scrolling-banner {
+  animation: background-scroll 42s linear infinite;
+}
+
+@media not all and (min-width: 768px) {
+  .ssl-scrolling-banner {
+    animation: background-scroll 56s linear infinite;
+  }
+}
