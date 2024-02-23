@@ -1,4 +1,5 @@
 ---
+import { t } from "i18next";
 import Event from "./Event.svelte";
 import Participating from "./Participating.svelte";
 
@@ -13,20 +14,70 @@ const { dates } = Astro.props;
   <div class="grid grid-cols-2 gap-4 max-lg:grid-cols-1 max-lg:gap-10">
     <!-- Event -->
     <div class="flex w-full max-w-xl flex-col items-center">
-      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">Event</h2>
-      <Event {dates} client:idle />
+      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">
+        {t("details.headers.event", "Event")}
+      </h2>
+      <Event
+        initial="main-event"
+        items={[
+          {
+            id: "warm-up",
+            title: `🔥 ${t("details.event.warm-up.title", "Warm Up Games")}`,
+            aside: dates.warmup,
+            description: t(
+              "details.event.warm-up.description",
+              "Join early for rank-capped warm up games!\n(No prizes, just for fun!)",
+            ),
+          },
+          {
+            id: "main-event",
+            title: `🏆 ${t("details.event.main.title", "Main Event")}`,
+            aside: dates.main,
+            description: t(
+              "details.event.main.description",
+              "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments.",
+            ),
+          },
+          {
+            id: "afterparty",
+            title: `🎉 ${t("details.event.afterparty.title", "Afterparty Showcase")}`,
+            aside: dates.afterparty,
+            description: t(
+              "details.event.afterparty.description",
+              "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!",
+            ),
+          },
+          {
+            id: "prizes",
+            title: `🎁 ${t("details.event.prizes.title", "Prizes")}`,
+            description: t(
+              "details.event.prizes.description",
+              "During the main event, have your chance at winning gifted subs to those streaming the event! A raffle will be open at the start of the main event for a chance to win fully paid comissioned work from @milkthos_sena. Winners of the raffle will be announced during the afterparty showcase.",
+            ),
+          },
+        ]}
+        client:idle
+      />
     </div>
     <!-- Streamers Involed -->
     <div class="flex w-full max-w-xl flex-col items-center">
-      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">Streamers Involved</h2>
+      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">
+        {t("details.headers.streamers-involved", "Streamers Involved")}
+      </h2>
       <div class="w-full rounded bg-white p-5 shadow">
         <Participating client:idle />
       </div>
       <div class="my-4"></div>
-      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">Custom assets</h2>
+      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">
+        {t("details.headers.custom-assets", "Custom Assets")}
+      </h2>
       <div class="rounded bg-white p-5 text-center shadow">
-        The event also features original Background Music and Graphics created by several talented
-        community members! And of course, shoutouts to many wonderful streamers in the TETR.IO chat!
+        {
+          t(
+            "details.details.custom-assets",
+            "The event also features original Background Music and Graphics created by several talented community members! And of course, shoutouts to many wonderful streamers in the TETR.IO chat!",
+          )
+        }
       </div>
     </div>
   </div>

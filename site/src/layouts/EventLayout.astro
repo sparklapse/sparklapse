@@ -7,12 +7,13 @@ interface Props {
   description?: string;
   image?: { src: string };
   twitterCard?: "summary" | "summary_large_image" | "app" | "player";
+  lang?: string;
 }
 
-const { title, description, summary, image, twitterCard = "summary" } = Astro.props;
+const { title, description, summary, image, twitterCard = "summary", lang } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} lang={lang}>
   <Fragment slot="head">
     {
       title && (

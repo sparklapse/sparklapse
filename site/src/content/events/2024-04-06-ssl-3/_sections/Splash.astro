@@ -1,4 +1,5 @@
 ---
+import { t } from "i18next";
 import { Image } from "astro:assets";
 import { ArrowDown } from "lucide-svelte";
 import CountDown from "$components/CountDown.svelte";
@@ -21,8 +22,12 @@ const { date } = Astro.props;
     />
     <div>
       <p class="px-7 text-center text-2xl max-md:text-lg">
-        The community event featuring over 200 streamers and their viewers battling it out in one
-        TETR.IO match.
+        {
+          t(
+            "splash.subtitle",
+            "The community event featuring over 200 streamers and their viewers battling it out in one TETR.IO match.",
+          )
+        }
       </p>
     </div>
     <div

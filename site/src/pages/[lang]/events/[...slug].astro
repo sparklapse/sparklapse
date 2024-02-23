@@ -1,0 +1,55 @@
+---
+import i18next from "i18next";
+import { type CollectionEntry, getCollection } from "astro:content";
+import EventLayout from "$layouts/EventLayout.astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const translations = Object.entries(
+    import.meta.glob("/translations/events/**/*.json", { eager: true }),
+  ).map(([path, resource]) => {
+    const [_, _translations, _events, lang, event] = path.split("/");
+    return {
+      lang,
+      event: event.replace(".json", ""),
+      resource,
+    };
+  });
+  const events = await getCollection("events");
+
+  const paths = translations.map((translation) => {
+    const { lang, event, resource } = translation;
+    const page = events.find((page) => page.slug === event);
+
+    if (!page) throw new Error(`Translation for non existant event: ${event}`);
+
+    return {
+      params: { lang, slug: page.slug },
+      props: { ...page, resource },
+    };
+  });
+
+  return paths;
+}
+type Props = CollectionEntry<"events"> & { resource: any };
+
+const { lang } = Astro.params;
+const { render, data, resource } = Astro.props;
+const { Content } = await render();
+
+i18next.init({
+  lng: lang,
+  resources: {
+    [lang]: {
+      translation: resource,
+    },
+  },
+});
+---
+
+<EventLayout lang={lang} {...data}>
+  <div class="prose contents">
+    <Content />
+  </div>
+</EventLayout>

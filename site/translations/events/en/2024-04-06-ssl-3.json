@@ -1,0 +1,91 @@
+{
+  "splash": {
+    "subtitle": "The community event featuring over 200 streamers and their viewers battling it out in one TETR.IO match.",
+    "timer": {
+      "days": {
+        "0": "Days",
+        "1": "Day",
+        "2": "Days",
+        "3": "Days",
+        "4": "Days",
+        "5": "Days",
+        "6": "Days",
+        "7": "Days",
+        "8": "Days",
+        "9": "Days"
+      },
+      "hours": {
+        "0": "Hours",
+        "1": "Hour",
+        "2": "Hours",
+        "3": "Hours",
+        "4": "Hours",
+        "5": "Hours",
+        "6": "Hours",
+        "7": "Hours",
+        "8": "Hours",
+        "9": "Hours"
+      },
+      "minutes": {
+        "0": "Minutes",
+        "1": "Minute",
+        "2": "Minutes",
+        "3": "Minutes",
+        "4": "Minutes",
+        "5": "Minutes",
+        "6": "Minutes",
+        "7": "Minutes",
+        "8": "Minutes",
+        "9": "Minutes"
+      },
+      "seconds": {
+        "0": "Seconds",
+        "1": "Second",
+        "2": "Seconds",
+        "3": "Seconds",
+        "4": "Seconds",
+        "5": "Seconds",
+        "6": "Seconds",
+        "7": "Seconds",
+        "8": "Seconds",
+        "9": "Seconds"
+      }
+    }
+  },
+  "hypeinfo": {
+    "total-games": "16 Games",
+    "total-standard": "8 Standard Games",
+    "total-custom": "8 Custom Modes",
+    "total-lead": "Streamesr and viewers totalling",
+    "total-players": "400+ Players"
+  },
+  "details": {
+    "headers": {
+      "event": "Event",
+      "streamers-involved": "Streamers Involved",
+      "custom-assets": "Custom Assets",
+      "credits": "Credits"
+    },
+    "details": {
+      "custom-assets": "The event also features original Background Music and Graphics created by several talented community members! And of course, shoutouts to many wonderful streamers in the TETR.IO chat!"
+    },
+    "event": {
+      "warm-up": {
+        "title": "Warm Up Games",
+        "description": "Join early for rank-capped warm up games!\n(No prizes, just for fun!)"
+      },
+      "main": {
+        "title": "Main Event",
+        "description": "The main event consists of 8 standard games and 8 gimmick games, with each game lasting 3-8 minutes. Gimmick games are a staple of Super Streamer Lobbies, in which we run several custom game modes to maximize laughs and clippable moments."
+      },
+      "afterparty": {
+        "title": "Afterparty Showcase",
+        "description": "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!"
+      },
+      "prizes": {
+        "title": "Prizes",
+        "description": "During the main event, have your chance at winning gifted subs to those streaming the event! A raffle will be open at the start of the main event for a chance to win fully paid comissioned work from @milkthos_sena. Winners of the raffle will be announced during the afterparty showcase."
+      }
+    }
+  }
+}

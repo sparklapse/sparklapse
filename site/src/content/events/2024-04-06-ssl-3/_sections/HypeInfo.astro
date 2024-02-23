@@ -1,4 +1,5 @@
 ---
+import { t } from "i18next";
 import Modes from "./modes.png";
 ---
 
@@ -6,10 +7,10 @@ import Modes from "./modes.png";
   <!-- Games -->
   <div id="about" class="flex w-full max-w-4xl gap-2 max-md:flex-wrap">
     <div class="flex flex-col">
-      <p class="ssl-hyper-text text-5xl font-extrabold">16 Games</p>
+      <p class="ssl-hyper-text text-5xl font-extrabold">{t("hypeinfo.total-games", "16 Games")}</p>
       <ul class="font-bold">
-        <li class="text-xl">8 Standard Games</li>
-        <li class="text-xl">8 Custom Modes</li>
+        <li class="text-xl">{t("hypeinfo.total-standard", "8 Standard Games")}</li>
+        <li class="text-xl">{t("hypeinfo.total-custom", "8 Custom Modes")}</li>
       </ul>
     </div>
   </div>
@@ -37,8 +38,8 @@ import Modes from "./modes.png";
   <!-- Player stats -->
   <div class="flex w-full max-w-4xl flex-col items-end text-right">
     <ul class="font-bold">
-      <li class="text-xl">Streamers and Viewers totalling</li>
+      <li class="text-xl">{t("hypeinfo.total-lead", "Streamers and Viewers totalling")}</li>
     </ul>
-    <p class="ssl-hyper-text text-5xl font-extrabold">400+ Players</p>
+    <p class="ssl-hyper-text text-5xl font-extrabold">{t("hypeinfo.total-players", "400+ Players")}</p>
   </div>
 </section>
