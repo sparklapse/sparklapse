@@ -65,7 +65,7 @@ const { dates } = Astro.props;
         {t("details.headers.streamers-involved", "Streamers Involved")}
       </h2>
       <div class="w-full rounded bg-white p-5 shadow">
-        <Participating client:idle />
+        <Participating client:only />
       </div>
       <div class="my-4"></div>
       <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">
