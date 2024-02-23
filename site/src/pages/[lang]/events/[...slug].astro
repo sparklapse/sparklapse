@@ -34,9 +34,11 @@ type Props = CollectionEntry<"events"> & { resource: any };
 
 const { lang } = Astro.params;
 const { render, data, resource } = Astro.props;
-const { Content } = await render();
 
 i18next.addResourceBundle(lang, "translation", resource);
+await i18next.changeLanguage(lang);
+
+const { Content } = await render();
 ---
 
 <EventLayout lang={lang} {...data}>

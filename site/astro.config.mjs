@@ -7,7 +7,7 @@ import { defineConfig } from "astro/config";
 
 import i18next from "i18next";
 
-i18next.init({
+await i18next.init({
   lng: "en",
 });
 
