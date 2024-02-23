@@ -1,8 +1,7 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { type CollectionEntry, getCollection } from "astro:content";
 import EventLayout from "$layouts/EventLayout.astro";
-
-export const prerender = true;
 
 export async function getStaticPaths() {
   const events = await getCollection("events");
@@ -13,11 +12,31 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<"events">;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const { render, data, slug } = Astro.props;
+
+const translations = Object.entries(
+  import.meta.glob("/translations/events/**/*.json", { eager: true }),
+).map(([path, resource]) => {
+  const [_, _translations, _events, lang, event] = path.split("/");
+  return {
+    lang,
+    event: event.replace(".json", ""),
+    resource,
+  };
+});
+const availableLangs = translations.filter((t) => t.event === slug).map((t) => t.lang);
+
+if (
+  Astro.preferredLocale &&
+  Astro.preferredLocale !== "en" &&
+  availableLangs.includes(Astro.preferredLocale)
+)
+  return Astro.redirect(getRelativeLocaleUrl(Astro.preferredLocale, `events/${slug}`));
+
+const { Content } = await render();
 ---
 
-<EventLayout {...post.data}>
+<EventLayout {...data}>
   <div class="prose contents">
     <Content />
   </div>
