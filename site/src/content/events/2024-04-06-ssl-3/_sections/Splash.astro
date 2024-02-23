@@ -34,7 +34,7 @@ const { date } = Astro.props;
       class="mt-5 flex w-fit flex-col items-center whitespace-nowrap rounded bg-white px-4 py-2 shadow-xl"
     >
       <p class="ssl-hyper-text shadow-dark text-2xl font-bold drop-shadow max-sm:text-base">
-        <CountDown date={date} client:load />
+        <CountDown date={date} client:only />
       </p>
       <p class="text-zinc-600 max-sm:text-xs">
         <LocalTime
