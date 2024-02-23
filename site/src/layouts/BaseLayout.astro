@@ -9,10 +9,7 @@ interface Props {
 }
 
 const { title, lang = "en" } = Astro.props;
-
-i18next.init({
-  lng: "en",
-});
+i18next.changeLanguage(lang);
 ---
 
 <!doctype html>

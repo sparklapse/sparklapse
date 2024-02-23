@@ -5,6 +5,12 @@ import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel/static";
 import { defineConfig } from "astro/config";
 
+import i18next from "i18next";
+
+i18next.init({
+  lng: "en",
+});
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://sparklapse.com",
