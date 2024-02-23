@@ -1,4 +1,5 @@
 ---
+import i18next from "i18next";
 import "@fontsource-variable/gabarito";
 import "../styles/global.css";
 
@@ -8,6 +9,10 @@ interface Props {
 }
 
 const { title, lang = "en" } = Astro.props;
+
+i18next.init({
+  lng: "en",
+});
 ---
 
 <!doctype html>

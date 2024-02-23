@@ -38,14 +38,8 @@ const { lang } = Astro.params;
 const { render, data, resource } = Astro.props;
 const { Content } = await render();
 
-i18next.init({
-  lng: lang,
-  resources: {
-    [lang]: {
-      translation: resource,
-    },
-  },
-});
+i18next.changeLanguage(lang);
+i18next.addResources(lang, "translation", resource);
 ---
 
 <EventLayout lang={lang} {...data}>
