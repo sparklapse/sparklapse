@@ -14,7 +14,7 @@
   }[];
   $: localised = items.map((item) => ({
     ...item,
-    aside: item.aside?.toLocaleTimeString("en-US", {
+    aside: item.aside?.toLocaleTimeString(document.documentElement.lang, {
       hour: "numeric",
       minute: "2-digit",
       timeZoneName: "shortGeneric",

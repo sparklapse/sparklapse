@@ -3,4 +3,4 @@
   export let options: Intl.DateTimeFormatOptions = {};
 </script>
 
-<span>{date.toLocaleTimeString("en-US", options)}</span>
+<span>{date.toLocaleTimeString(document.documentElement.lang, options)}</span>
