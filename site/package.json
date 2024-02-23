@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
@@ -31,6 +32,10 @@
     "@melt-ui/pp": "^0.3.0",
     "@melt-ui/svelte": "^0.73.0",
     "@tailwindcss/typography": "^0.5.10",
-    "@vercel/edge": "^1.1.1"
+    "@vercel/edge": "^1.1.1",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-svelte": "^3.2.1",
+    "prettier-plugin-tailwindcss": "^0.5.11"
   }
 }

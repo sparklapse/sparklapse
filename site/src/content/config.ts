@@ -8,9 +8,7 @@ const events = defineCollection({
       summary: z.string(),
       description: z.string().optional(),
       image: image().optional(),
-      twitterCard: z
-        .enum(["summary", "summary_large_image", "app", "player"])
-        .optional(),
+      twitterCard: z.enum(["summary", "summary_large_image", "app", "player"]).optional(),
     }),
 });
 

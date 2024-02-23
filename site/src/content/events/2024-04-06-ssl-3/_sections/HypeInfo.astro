@@ -2,11 +2,11 @@
 import Modes from "./modes.png";
 ---
 
-<section class="contents not-prose">
+<section class="not-prose contents">
   <!-- Games -->
-  <div id="about" class="max-w-4xl w-full flex gap-2 max-md:flex-wrap">
+  <div id="about" class="flex w-full max-w-4xl gap-2 max-md:flex-wrap">
     <div class="flex flex-col">
-      <p class="font-extrabold text-5xl ssl-hyper-text">16 Games</p>
+      <p class="ssl-hyper-text text-5xl font-extrabold">16 Games</p>
       <ul class="font-bold">
         <li class="text-xl">8 Standard Games</li>
         <li class="text-xl">8 Custom Modes</li>
@@ -15,7 +15,7 @@ import Modes from "./modes.png";
   </div>
   <!-- Modes scroll image -->
   <div
-    class="ssl-dynamic-scale relative w-full py-20 my-7"
+    class="ssl-dynamic-scale relative my-7 w-full py-20"
     style={{
       "--width": `${Modes.width}px`,
       "--height": `${Modes.height}px`,
@@ -23,11 +23,10 @@ import Modes from "./modes.png";
     }}
   >
     <div
-      class="ssl-scrolling-banner absolute h-full w-[calc(120vw)] top-0 -left-10 -rotate-6"
+      class="ssl-scrolling-banner absolute -left-10 top-0 h-full w-[calc(120vw)] -rotate-6"
       style={{
         backgroundImage: `url('${Modes.src}')`,
-        backgroundSize:
-          "calc(var(--width)/var(--scale)) calc(var(--height)/var(--scale))",
+        backgroundSize: "calc(var(--width)/var(--scale)) calc(var(--height)/var(--scale))",
         backgroundRepeat: "repeat-x",
         backgroundPositionY: "center",
         filter: "drop-shadow(-7px 7px 4px hsla(0, 0%, 0%, 25%))",
@@ -36,10 +35,10 @@ import Modes from "./modes.png";
     </div>
   </div>
   <!-- Player stats -->
-  <div class="max-w-4xl w-full flex items-end flex-col text-right">
+  <div class="flex w-full max-w-4xl flex-col items-end text-right">
     <ul class="font-bold">
       <li class="text-xl">Streamers and Viewers totalling</li>
     </ul>
-    <p class="font-extrabold text-5xl ssl-hyper-text">400+ Players</p>
+    <p class="ssl-hyper-text text-5xl font-extrabold">400+ Players</p>
   </div>
 </section>

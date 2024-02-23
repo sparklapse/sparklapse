@@ -9,13 +9,7 @@ interface Props {
   twitterCard?: "summary" | "summary_large_image" | "app" | "player";
 }
 
-const {
-  title,
-  description,
-  summary,
-  image,
-  twitterCard = "summary",
-} = Astro.props;
+const { title, description, summary, image, twitterCard = "summary" } = Astro.props;
 ---
 
 <BaseLayout title={title}>

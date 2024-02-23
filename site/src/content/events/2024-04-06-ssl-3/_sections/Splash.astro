@@ -12,7 +12,7 @@ interface Props {
 const { date } = Astro.props;
 ---
 
-<header class="relative h-screen grid place-content-center max-w-4xl not-prose">
+<header class="not-prose relative grid h-screen w-full max-w-4xl place-content-center">
   <div class="flex flex-col items-center">
     <Image
       src={Logo}
@@ -20,15 +20,15 @@ const { date } = Astro.props;
       style="filter: drop-shadow(-14px 14px 0px hsla(0, 0%, 0%, 25%));"
     />
     <div>
-      <p class="px-7 text-2xl text-center max-md:text-lg">
-        The community event featuring over 200 streamers and their viewers
-        battling it out in one TETR.IO match.
+      <p class="px-7 text-center text-2xl max-md:text-lg">
+        The community event featuring over 200 streamers and their viewers battling it out in one
+        TETR.IO match.
       </p>
     </div>
     <div
-      class="bg-white rounded shadow-xl px-4 py-2 w-fit mt-5 flex flex-col items-center whitespace-nowrap max-sm:text-base"
+      class="mt-5 flex w-fit flex-col items-center whitespace-nowrap rounded bg-white px-4 py-2 shadow-xl"
     >
-      <p class="font-bold ssl-hyper-text drop-shadow shadow-dark text-2xl">
+      <p class="ssl-hyper-text shadow-dark text-2xl font-bold drop-shadow max-sm:text-base">
         <CountDown date={date} client:load />
       </p>
       <p class="text-zinc-600 max-sm:text-xs">
@@ -48,7 +48,7 @@ const { date } = Astro.props;
     </div>
   </div>
   <a
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white shadow rounded-full p-1"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 rounded-full bg-white p-1 shadow"
     href="#about"
   >
     <ArrowDown size="2rem" />

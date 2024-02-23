@@ -40,14 +40,11 @@
     requestAnimationFrame(() => {
       const height = scroller.querySelector("div")!.clientHeight;
       scroller.animate(
-        [
-          { transform: "translateY(0)" },
-          { transform: `translateY(-${height}px)` },
-        ],
+        [{ transform: "translateY(0)" }, { transform: `translateY(-${height}px)` }],
         {
           duration: 30000,
           iterations: Infinity,
-        }
+        },
       );
     });
   });
@@ -61,7 +58,7 @@
   <div class="text-xl font-bold" bind:this={scroller}>
     <div class="flex flex-col">
       {#each doubleCol as [a, b]}
-        <div class="flex gap-4 justify-center *:w-full">
+        <div class="flex justify-center gap-4 *:w-full">
           <span class="text-right">{a}</span>
           <span class="text-left">{b}</span>
         </div>
@@ -69,7 +66,7 @@
     </div>
     <div class="flex flex-col">
       {#each doubleCol as [a, b]}
-        <div class="flex gap-4 justify-center *:w-full">
+        <div class="flex justify-center gap-4 *:w-full">
           <span class="text-right">{a}</span>
           <span class="text-left">{b}</span>
         </div>

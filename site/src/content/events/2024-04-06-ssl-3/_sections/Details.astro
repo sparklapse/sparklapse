@@ -9,27 +9,24 @@ interface Props {
 const { dates } = Astro.props;
 ---
 
-<section class="contents not-prose">
-  <div class="grid grid-cols-2 max-lg:grid-cols-1 gap-4 max-lg:gap-10">
+<section class="not-prose contents">
+  <div class="grid grid-cols-2 gap-4 max-lg:grid-cols-1 max-lg:gap-10">
     <!-- Event -->
-    <div class="w-full max-w-xl flex flex-col items-center">
-      <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">Event</h2>
+    <div class="flex w-full max-w-xl flex-col items-center">
+      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">Event</h2>
       <Event {dates} client:idle />
     </div>
     <!-- Streamers Involed -->
-    <div class="w-full max-w-xl flex flex-col items-center">
-      <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">
-        Streamers Involved
-      </h2>
-      <div class="bg-white shadow rounded p-5 w-full">
+    <div class="flex w-full max-w-xl flex-col items-center">
+      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">Streamers Involved</h2>
+      <div class="w-full rounded bg-white p-5 shadow">
         <Participating client:idle />
       </div>
       <div class="my-4"></div>
-      <h2 class="font-extrabold text-3xl ssl-hyper-text mb-2">Custom assets</h2>
-      <div class="bg-white shadow rounded p-5 text-center">
-        The event also features original Background Music and Graphics created
-        by several talented community members! And of course, shoutouts to many
-        wonderful streamers in the TETR.IO chat!
+      <h2 class="ssl-hyper-text mb-2 text-3xl font-extrabold">Custom assets</h2>
+      <div class="rounded bg-white p-5 text-center shadow">
+        The event also features original Background Music and Graphics created by several talented
+        community members! And of course, shoutouts to many wonderful streamers in the TETR.IO chat!
       </div>
     </div>
   </div>

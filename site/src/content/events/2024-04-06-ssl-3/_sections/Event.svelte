@@ -19,8 +19,7 @@
         minute: "2-digit",
         timeZoneName: "shortGeneric",
       }),
-      description:
-        "Join early for rank-capped warm up games!\n(No prizes, just for fun!)",
+      description: "Join early for rank-capped warm up games!\n(No prizes, just for fun!)",
     },
     {
       id: "main-event",

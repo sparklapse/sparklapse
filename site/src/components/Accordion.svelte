@@ -40,7 +40,7 @@
       <button
         use:melt={$trigger(id)}
         class={clsx([
-          "flex cursor-pointer w-full bg-white px-5 py-5 justify-between",
+          "flex w-full cursor-pointer justify-between bg-white px-5 py-5",
           "transition-colors hover:bg-neutral-100",
           i !== 0 && "border-t border-t-neutral-300",
           styles.item,
@@ -61,7 +61,7 @@
           use:melt={$content(id)}
           transition:slide
         >
-          <div class="px-5 py-4 whitespace-pre-wrap">
+          <div class="whitespace-pre-wrap px-5 py-4">
             {description}
           </div>
         </div>
