@@ -1,18 +1,17 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getEntry } from "astro:content";
 import EventLayout from "$layouts/EventLayout.astro";
 
-export async function getStaticPaths() {
-  const events = await getCollection("events");
-  return events.map((event) => ({
-    params: { slug: event.slug },
-    props: event,
-  }));
-}
-type Props = CollectionEntry<"events">;
+export const prerender = false;
 
-const { render, data, slug } = Astro.props;
+const { slug } = Astro.params;
+if (!slug) throw new Error("Slug is required");
+
+const entry = await getEntry("events", slug);
+if (!entry) return Astro.redirect("/404");
+
+const { render, data } = entry;
 
 const translations = Object.entries(
   import.meta.glob("/translations/events/**/*.json", { eager: true }),
@@ -27,11 +26,14 @@ const translations = Object.entries(
 const availableLangs = translations.filter((t) => t.event === slug).map((t) => t.lang);
 
 if (
-  Astro.preferredLocale &&
+  Astro.preferredLocale !== undefined &&
   Astro.preferredLocale !== "en" &&
   availableLangs.includes(Astro.preferredLocale)
-)
-  return Astro.redirect(getRelativeLocaleUrl(Astro.preferredLocale, `events/${slug}`));
+) {
+  const path = getRelativeLocaleUrl(Astro.preferredLocale, `events/${slug}`);
+  path; // Suppress TS error since it doesnt recognise astro top-level return magic
+  return Astro.redirect(path);
+}
 
 const { Content } = await render();
 ---
