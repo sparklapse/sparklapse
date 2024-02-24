@@ -11,6 +11,11 @@ interface Props {
 }
 
 const { title, description, summary, image, twitterCard = "summary", lang } = Astro.props;
+const imageUrl = image
+  ? import.meta.env.PROD
+    ? new URL(image.src, import.meta.env.SITE).toString()
+    : image.src
+  : undefined;
 ---
 
 <BaseLayout title={title} lang={lang}>
@@ -36,8 +41,8 @@ const { title, description, summary, image, twitterCard = "summary", lang } = As
     {
       image && (
         <>
-          <meta property="og:image" content={image.src} />
-          <meta property="twitter:image" content={image.src} />
+          <meta property="og:image" content={imageUrl} />
+          <meta property="twitter:image" content={imageUrl} />
         </>
       )
     }
