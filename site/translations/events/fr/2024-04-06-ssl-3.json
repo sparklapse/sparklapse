@@ -1,0 +1,91 @@
+{
+  "splash": {
+    "subtitle": "L'événement qui met en scène plus de 200 streamers et leurs spectateurs qui s'affrontent dans une grande partie de TETR.IO",
+    "timer": {
+      "days": {
+        "0": "Jours",
+        "1": "Jour",
+        "2": "Jours",
+        "3": "Jours",
+        "4": "Jours",
+        "5": "Jours",
+        "6": "Jours",
+        "7": "Jours",
+        "8": "Jours",
+        "9": "Jours"
+      },
+      "hours": {
+        "0": "Heures",
+        "1": "Heures",
+        "2": "Heures",
+        "3": "Heures",
+        "4": "Heures",
+        "5": "Heures",
+        "6": "Heures",
+        "7": "Heures",
+        "8": "Heures",
+        "9": "Heures"
+      },
+      "minutes": {
+        "0": "Minutes",
+        "1": "Minute",
+        "2": "Minutes",
+        "3": "Minutes",
+        "4": "Minutes",
+        "5": "Minutes",
+        "6": "Minutes",
+        "7": "Minutes",
+        "8": "Minutes",
+        "9": "Minutes"
+      },
+      "seconds": {
+        "0": "Secondes",
+        "1": "Secondes",
+        "2": "Secondes",
+        "3": "Secondes",
+        "4": "Secondes",
+        "5": "Secondes",
+        "6": "Secondes",
+        "7": "Secondes",
+        "8": "Secondes",
+        "9": "Secondes"
+      }
+    }
+  },
+  "hypeinfo": {
+    "total-games": "16 Parties",
+    "total-standard": "8 Parties Standards",
+    "total-custom": "8 Modes Personnalisés",
+    "total-lead": "Streamers et Téléspectateurs",
+    "total-players": "Plus de 400 joueurs"
+  },
+  "details": {
+    "headers": {
+      "event": "Événement",
+      "streamers-involved": "Streamers Participants",
+      "custom-assets": "Ressources Personnalisées",
+      "credits": "Crédits"
+    },
+    "details": {
+      "custom-assets": "L'événement présente une trame sonore musicale originale, unique et exclusive, accompagné par une conception graphique conçue par plusieurs membres talentueux de la communauté! Nous voulons aussi souligner et remercier les nombreux streamers de la communauté TETR.IO !"
+    },
+    "event": {
+      "warm-up": {
+        "title": "Parties de pratique",
+        "description": "Rejoignez-nous plus tôt pour des parties de pratique où les rangs sont plafonnés !\n(Pas de prix ici, c'est juste pour s'amuser!)"
+      },
+      "main": {
+        "title": "Événement Principal",
+        "description": "L'événement principal consiste de 8 parties standards et de 8 parties à surprises uniques, d'où chaque jeu a une durée de 3 à 8 minutes. Les parties surprises sont essentiels au Super Streamer Lobby, dans lesquelles nous lançons d'habitude plusieurs modes de jeux personnalisés afin de maximiser les rires et les moments clippables."
+      },
+      "afterparty": {
+        "title": "Showcase de l'after party",
+        "description": "Venez voir la présentation sur Twitch des meilleurs clips et des moments inoubliables de plus des 200+ streamers qui ont participé à l'événement, ainsi qu'aux interviews et du tirage de prix qui auront lieu."
+      },
+      "prizes": {
+        "title": "Prix",
+        "description": "Pendant l'événement principal, tentez votre chance de gagner des abonnements offerts aux streamers qui diffusent l'événement en continu! Une tombola sera ouverte au début de l'événement principal pour une chance de gagner une commande entièrement payée de @milkthos_sena. Les gagnants de la tombola seront annoncés lors du showcase de l'afterparty."
+      }
+    }
+  }
+}
