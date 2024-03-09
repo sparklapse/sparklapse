@@ -1,6 +1,6 @@
 {
   "splash": {
-    "subtitle": "El evento comunitario presentando más de 200 streamers y sus espectadores luchando en un partido de TETR.IO.",
+    "subtitle": "El evento comunitario que cuenta más de 200 streamers y sus espectadores jugándola en una partida de TETR.IO.",
     "timer": {
       "days": {
         "0": "Días",
@@ -16,7 +16,7 @@
       },
       "hours": {
         "0": "Horas",
-        "1": "Hour",
+        "1": "Hora",
         "2": "Horas",
         "3": "Horas",
         "4": "Horas",
@@ -28,7 +28,7 @@
       },
       "minutes": {
         "0": "Minutos",
-        "1": "Minutos",
+        "1": "Minuto",
         "2": "Minutos",
         "3": "Minutos",
         "4": "Minutos",
@@ -42,7 +42,7 @@
         "0": "Segundos",
         "1": "Segundo",
         "2": "Segundos",
-        "3": "Segundo",
+        "3": "Segundos",
         "4": "Segundos",
         "5": "Segundos",
         "6": "Segundos",
@@ -53,38 +53,38 @@
     }
   },
   "hypeinfo": {
-    "total-games": "16 Juegos",
-    "total-standard": "8 Juegos Estándar",
+    "total-games": "16 Modos de Juego",
+    "total-standard": "8 Modos Estándar",
     "total-custom": "8 Modos Personalizados",
-    "total-lead": "Streamers y espectadores Totalizando",
+    "total-lead": "Streamers y espectadores sumando",
     "total-players": "400+ Jugadores"
   },
   "details": {
     "headers": {
       "event": "Evento",
       "streamers-involved": "Streamers Involucrados",
-      "custom-assets": "Activos Personalizados",
+      "custom-assets": "Diseños Personalizados",
       "credits": "Créditos"
     },
     "details": {
-      "custom-assets": "¡El eventos también presentará Música en fondo y Gráficas originales creados por varios miembros talentosos de la comunidad! Y por supuesto, ¡saludos a todos los streamers en el chat de TETR.IO!"
+      "custom-assets": "¡El evento también presentará Música de fondo y Gráficas originales creados por varios miembros talentosos de la comunidad! Y por supuesto, ¡saludos a todos los streamers en el chat de TETR.IO!"
     },
     "event": {
       "warm-up": {
-        "title": "Juegos de Calentamiento",
-        "description": "¡Únete pronto para juegos de calentamiento con rango máximo!\n(No premies, ¡sólo por diversión!)"
+        "title": "Partidas de Calentamiento",
+        "description": "¡Ven temprano para sus partidas de precalentamiento con tope de rango!\n(Sin premios, ¡sólo por diversión!)"
       },
       "main": {
-        "title": "Evento Principial",
-        "description": "El evento principial consiste de 8 juegos estándar y 8 juegos de truco, con cada juego durando 3-8 minutos. Juegos de truco son juegos principales de Super Streamer Lobbies, donde jugamos a varios juegos personalizados para maximizar risas y momentos recortables."
+        "title": "Evento Principal",
+        "description": "El evento principal consta de 8 juegos estándar y 8 partidas con algunos cambios, cada uno durando de 3 a 8 minutos. Dichos cambios son característicos de las Super Streamer Lobbies, donde jugamos varios modos personalizados para sacar carcajadas y momentos clipeables."
       },
       "afterparty": {
-        "title": "Escaparate Posfiesta",
-        "description": "¡Ven a ver el escaparate en Twitch de los mejores clips y momentos de los 200 streamers en el evento, junto con algunas entrevistas y obsequios!"
+        "title": "After y Premios",
+        "description": "¡Ven a ver el After en Twitch de los mejores clips y momentos de los 200 streamers en el evento, junto con algunas entrevistas y premios!"
       },
       "prizes": {
         "title": "Premios",
-        "description": "Durante el evento principial, ¡tenga tu oportunidad a ganar suscripciones regalados a los que están en vivo durante el evento! Se abrirá una rifa durante el evento principial para una oportunidad de ganar trabajo encargado pagado de @milkthos_sena. Ganadores de la rifa serán anunciado durante el escaparate posfiesta."
+        "description": "Durante el evento principal, ¡tendrás la oportunidad de ganar suscripciones regalados a los que estén en vivo durante el evento! Se abrirá un sorteo durante el evento principal para una oportunidad de ganar una comisión pagada de @milkthos_sena. Ganadores de la rifa serán anunciado durante el After."
       }
     }
   }
