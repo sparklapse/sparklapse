@@ -1,6 +1,6 @@
 {
   "splash": {
-    "subtitle": "L'événement qui met en scène plus de 200 streamers et leurs spectateurs qui s'affrontent dans une grande partie de TETR.IO",
+    "subtitle": "L'événement qui met en scène plus de 300 streamers et leurs spectateurs qui s'affrontent dans une grande partie de TETR.IO",
     "timer": {
       "days": {
         "0": "Jours",
@@ -57,7 +57,7 @@
     "total-standard": "8 Parties Standards",
     "total-custom": "8 Modes Personnalisés",
     "total-lead": "Streamers et Téléspectateurs",
-    "total-players": "Plus de 400 joueurs"
+    "total-players": "Plus de 500 joueurs"
   },
   "details": {
     "headers": {
@@ -80,7 +80,7 @@
       },
       "afterparty": {
         "title": "Showcase de l'after party",
-        "description": "Venez voir la présentation sur Twitch des meilleurs clips et des moments inoubliables de plus des 200+ streamers qui ont participé à l'événement, ainsi qu'aux interviews et du tirage de prix qui auront lieu."
+        "description": "Venez voir la présentation sur Twitch des meilleurs clips et des moments inoubliables de plus des 300+ streamers qui ont participé à l'événement, ainsi qu'aux interviews et du tirage de prix qui auront lieu."
       },
       "prizes": {
         "title": "Prix",

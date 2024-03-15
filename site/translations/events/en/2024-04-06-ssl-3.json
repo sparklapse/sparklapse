@@ -1,6 +1,6 @@
 {
   "splash": {
-    "subtitle": "The community event featuring over 200 streamers and their viewers battling it out in one TETR.IO match.",
+    "subtitle": "The community event featuring over 300 streamers and their viewers battling it out in one TETR.IO match.",
     "timer": {
       "days": {
         "0": "Days",
@@ -56,8 +56,8 @@
     "total-games": "16 Games",
     "total-standard": "8 Standard Games",
     "total-custom": "8 Custom Modes",
-    "total-lead": "Streamesr and viewers totalling",
-    "total-players": "400+ Players"
+    "total-lead": "Streamers and viewers totalling",
+    "total-players": "500+ Players"
   },
   "details": {
     "headers": {
@@ -80,11 +80,11 @@
       },
       "afterparty": {
         "title": "Afterparty Showcase",
-        "description": "Come watch the Twitch showcase of the best clips and highlights from all 200 streamers in the event, along with some interviews and giveaways!"
+        "description": "Come watch the Twitch showcase of the best clips and highlights from all 300+ streamers in the event, along with some interviews and giveaways!"
       },
       "prizes": {
         "title": "Prizes",
-        "description": "During the main event, have your chance at winning gifted subs to those streaming the event! A raffle will be open at the start of the main event for a chance to win fully paid comissioned work from @milkthos_sena. Winners of the raffle will be announced during the afterparty showcase."
+        "description": "During the main event, have your chance at winning gifted subs to those streaming the event! A raffle will be open at the start of the main event for a chance to win fully paid commissioned work from @milkthos_sena. Winners of the raffle will be announced during the afterparty showcase."
       }
     }
   }

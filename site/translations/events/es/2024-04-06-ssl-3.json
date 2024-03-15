@@ -1,6 +1,6 @@
 {
   "splash": {
-    "subtitle": "El evento comunitario que cuenta más de 200 streamers y sus espectadores jugándola en una partida de TETR.IO.",
+    "subtitle": "El evento comunitario que cuenta más de 300 streamers y sus espectadores jugándola en una partida de TETR.IO.",
     "timer": {
       "days": {
         "0": "Días",
@@ -57,7 +57,7 @@
     "total-standard": "8 Modos Estándar",
     "total-custom": "8 Modos Personalizados",
     "total-lead": "Streamers y espectadores sumando",
-    "total-players": "400+ Jugadores"
+    "total-players": "500+ Jugadores"
   },
   "details": {
     "headers": {
@@ -80,7 +80,7 @@
       },
       "afterparty": {
         "title": "After y Premios",
-        "description": "¡Ven a ver el After en Twitch de los mejores clips y momentos de los 200 streamers en el evento, junto con algunas entrevistas y premios!"
+        "description": "¡Ven a ver el After en Twitch de los mejores clips y momentos de los 300 streamers en el evento, junto con algunas entrevistas y premios!"
       },
       "prizes": {
         "title": "Premios",
