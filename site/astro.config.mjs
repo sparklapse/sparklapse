@@ -16,7 +16,7 @@ export default defineConfig({
   site: "https://sparklapse.com",
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "ru", "ko", "ja", "es", "fr"],
+    locales: ["en", "ru", "ko", "ja", "es", "fr", "zh"],
   },
   integrations: [mdx(), sitemap(), tailwind(), svelte()],
   vite: {
